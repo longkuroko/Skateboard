@@ -1,0 +1,375 @@
+@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kaushan Script", cursive;
+  background: var(--mainWhite);
+  color: var(--mainBlack);
+  overflow-x: hidden;
+}
+
+.logo {
+  text-align: center;
+}
+
+.logo1 {
+  text-align: center;
+  top: -20%;
+  position: absolute;
+  left: 30%;
+}
+
+.navbar {
+  width: 100%;
+  position: absolute;
+  top: 20%;
+  background-color: #000000;
+}
+
+.navbar-nav {
+  margin: 0px auto;
+}
+
+.navbar-nav li {
+  border-left: 1px solid;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #ffff;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.background img {
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+}
+
+.carousel-item {
+  margin: 0px auto;
+}
+
+.stor_1 {
+  padding-left: 210px;
+}
+
+.stor_2 {
+  padding-left: 110px;
+}
+
+.stor_3 {
+  padding-left: 50px;
+}
+
+.arrow_prev img {
+  transform: rotate(45deg);
+  width: 50%;
+}
+
+.arrow_next img {
+  width: 50%;
+  transform: rotate(226deg);
+}
+
+.logo_banner {
+  background-color: #e2e2e2;
+  margin-top: -5px;
+}
+
+.banner {
+  background-color: #ffffff;
+  width: 90%;
+  padding-top: 40px;
+  margin: 0px auto;
+}
+
+.content {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 30px;
+  margin-top: 20px;
+}
+
+.content h2 a {
+  font-size: 26px;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: #000;
+  font-weight: bold;
+}
+
+.titile h2 .more {
+  color: #898989;
+  text-decoration: underline;
+  font-size: 14px;
+  font-family: Arial;
+  text-transform: none;
+  padding-top: 7px;
+}
+
+.titile h2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-info h3 {
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: 400;
+  color: silver;
+}
+
+.product-info h3 a {
+  color: #888484;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box .product-img {
+  line-height: 80px;
+  margin-right: 10px;
+  overflow: hidden;
+  border: 3px solid black;
+  text-align: center;
+  margin-bottom: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.product-img img {
+  max-width: 100%;
+}
+
+.navbar-nav .nav-item .nav-link:hover {
+  color: red;
+}
+
+.product-info h3 a:hover {
+  color: #1a1919;
+}
+
+.list-menu li p {
+  width: 56%;
+}
+
+.list-menu {
+  list-style: none;
+}
+
+.footer-widget a img {
+  max-width: 60%;
+}
+
+.site-footer {
+  background-image: url("../img/Skate\ board\ background\ wallpaper.jpg");
+  background-size: cover;
+}
+
+.store_menu {
+  margin-top: 25px;
+}
+
+.footer-widget ul {
+  padding-top: 100px;
+  line-height: 40px;
+}
+
+.footer-widget ul li a {
+  color: #000;
+  font-weight: 500;
+}
+
+.footer-widget a img {
+  max-width: 100%;
+  position: relative;
+  right: 55%;
+  margin-top: -63px;
+  margin-bottom: 59px;
+}
+
+.footer-widget h3 {
+  margin-top: 24px;
+}
+
+.list-menu li p {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  right: 38%;
+  font-weight: 500;
+}
+.navbar-nav {
+  margin-right: 275px !important;
+}
+.chitiet {
+  position: absolute;
+  left: 60%;
+  bottom: 30%;
+  line-height: 3;
+}
+
+ul {
+  list-style: none;
+}
+
+h3 {
+  position: relative;
+  color: #020202;
+  margin: 0;
+  padding: 13px 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  font-family: "oswald";
+  font-weight: 400;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.footer-widget h4 {
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-widget > p {
+  font-weight: 600;
+}
+
+.footer-widget p a {
+  color: #000;
+  font-weight: 500;
+}
+
+.contact {
+  padding-top: 65px;
+}
+
+.footer-widget ul li a:hover {
+  color: rgb(247, 15, 15);
+}
+
+.price-box {
+  padding-bottom: 31px;
+}
+/* .navbar-nav {
+            margin-left: 420px;
+        } */
+
+.btn i {
+  color: #ffff;
+}
+
+.navbar-nav {
+  margin-right: 190px;
+}
+
+@media only screen and (max-width: 576px) {
+  .logo1 {
+    text-align: center;
+    top: -17%;
+    position: absolute;
+    left: -10%;
+  }
+  .navbar {
+    width: 110%;
+    position: absolute;
+    top: 14%;
+    background-color: #000000;
+    opacity: 0.5;
+  }
+  .logo1 img {
+    max-height: 270px;
+  }
+  .navbar-toggler {
+    background-color: seashell;
+    border: 1px solid seashell;
+    width: 38px;
+    padding: 1px;
+  }
+  .navbar .collapse {
+    height: 54%;
+  }
+  .stor_1 {
+    padding-left: 0px;
+  }
+  .stor_2 {
+    padding-left: 0px;
+  }
+  .stor_3 {
+    padding-left: 0px;
+    display: none;
+  }
+  .title {
+    text-align: center;
+  }
+  .title h4 {
+    font-size: 15px;
+  }
+  .carousel-control-prev {
+    display: none;
+  }
+  .carousel-control-next {
+    display: none;
+  }
+  .banner {
+    display: none;
+  }
+  .footer-widget a img {
+    max-width: 100%;
+    position: relative;
+    right: 27%;
+    margin-top: -48px;
+    margin-bottom: 60px;
+  }
+  .list-menu li p {
+    position: absolute;
+    width: 90%;
+    top: 36%;
+    right: 2%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  .footer-widget ul {
+    padding-left: 11px;
+    padding-top: 15px;
+    line-height: 34px;
+  }
+  .background img {
+    width: 110%;
+  }
+  .logo_banner {
+    width: 110%;
+  }
+  .site-footer {
+    width: 110%;
+  }
+  .left {
+    text-align: center;
+  }
+}
+
+.timkiem {
+  height: 40px;
+  width: 40px;
+  border-radius: 200%;
+  position: relative;
+  left: -18%;
+  background: #000;
+}

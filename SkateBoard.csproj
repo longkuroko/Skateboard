@@ -171,6 +171,7 @@
     <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
@@ -191,6 +192,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\index.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -199,6 +201,42 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\1193926.jpg" />
+    <Content Include="img\123.jpg" />
+    <Content Include="img\308501-middle.png" />
+    <Content Include="img\admin.jpg" />
+    <Content Include="img\banhxe1.png" />
+    <Content Include="img\banhxe2.png" />
+    <Content Include="img\banhxe3.png" />
+    <Content Include="img\brand3.png" />
+    <Content Include="img\brand4.png" />
+    <Content Include="img\brand5.png" />
+    <Content Include="img\brand6.png" />
+    <Content Include="img\brand7.png" />
+    <Content Include="img\brand8.png" />
+    <Content Include="img\brand9.png" />
+    <Content Include="img\Capture.PNG" />
+    <Content Include="img\cart.png" />
+    <Content Include="img\Chega No Brasil A Colab Da Krooked E adidas Skateboarding.fpeg.jfif" />
+    <Content Include="img\img-9620.jpg" />
+    <Content Include="img\img-9621.jpg" />
+    <Content Include="img\img-9623-b8d51160-b352-47b9-ad64-b613cbfddd5e.jpg" />
+    <Content Include="img\noun_Arrow_349268.png" />
+    <Content Include="img\Skate board background wallpaper.jpg" />
+    <Content Include="img\Skateboard-Blogs.jpg" />
+    <Content Include="img\Skateboarding wallpaper for all the skateboarders _ Flatline.jpg" />
+    <Content Include="img\slider_4.png" />
+    <Content Include="img\trucbanh1.png" />
+    <Content Include="img\trucbanh2.png" />
+    <Content Include="img\trucbanh3.png" />
+    <Content Include="img\Untitled-1-01-removebg-preview.png" />
+    <Content Include="img\Untitled-1-01.png" />
+    <Content Include="img\van1.jpg" />
+    <Content Include="img\van2.jpg" />
+    <Content Include="img\van3.png" />
+    <Content Include="img\van4.jpg" />
+    <Content Include="img\van5.jpg" />
+    <Content Include="img\van6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
@@ -261,6 +299,8 @@
     <Content Include="Views\Product\Details.cshtml" />
     <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutNew.cshtml" />
+    <Content Include="Views\Index\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

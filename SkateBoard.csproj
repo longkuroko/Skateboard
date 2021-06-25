@@ -168,7 +168,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BrandController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -181,18 +180,38 @@
     <Compile Include="Migrations\202106241500368_initialModel.Designer.cs">
       <DependentUpon>202106241500368_initialModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202106250200534_CreateShopingCart.cs" />
+    <Compile Include="Migrations\202106250200534_CreateShopingCart.Designer.cs">
+      <DependentUpon>202106250200534_CreateShopingCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106250307059_UpateBRAND.cs" />
+    <Compile Include="Migrations\202106250307059_UpateBRAND.Designer.cs">
+      <DependentUpon>202106250307059_UpateBRAND.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251437399_DropTableBrand.cs" />
+    <Compile Include="Migrations\202106251437399_DropTableBrand.Designer.cs">
+      <DependentUpon>202106251437399_DropTableBrand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106251550310_addOrderandOrderDetailsTable.cs" />
+    <Compile Include="Migrations\202106251550310_addOrderandOrderDetailsTable.Designer.cs">
+      <DependentUpon>202106251550310_addOrderandOrderDetailsTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\ShopingCartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ProductViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Asset\index.css" />
+    <Content Include="Asset\shop.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -239,6 +258,7 @@
     <Content Include="img\van6.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -289,11 +309,7 @@
     <Content Include="Views\Category\Details.cshtml" />
     <Content Include="Views\Category\Edit.cshtml" />
     <Content Include="Views\Category\Index.cshtml" />
-    <Content Include="Views\Brand\Create.cshtml" />
-    <Content Include="Views\Brand\Delete.cshtml" />
-    <Content Include="Views\Brand\Details.cshtml" />
     <Content Include="Views\Brand\Edit.cshtml" />
-    <Content Include="Views\Brand\Index.cshtml" />
     <Content Include="Views\Product\Create.cshtml" />
     <Content Include="Views\Product\Delete.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
@@ -301,6 +317,11 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutNew.cshtml" />
     <Content Include="Views\Index\Index.cshtml" />
+    <Content Include="Views\ShopingCart\Create.cshtml" />
+    <Content Include="Views\ShopingCart\Delete.cshtml" />
+    <Content Include="Views\ShopingCart\Details.cshtml" />
+    <Content Include="Views\ShopingCart\Edit.cshtml" />
+    <Content Include="Views\ShopingCart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -321,6 +342,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202106241500368_initialModel.resx">
       <DependentUpon>202106241500368_initialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106250200534_CreateShopingCart.resx">
+      <DependentUpon>202106250200534_CreateShopingCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106250307059_UpateBRAND.resx">
+      <DependentUpon>202106250307059_UpateBRAND.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251437399_DropTableBrand.resx">
+      <DependentUpon>202106251437399_DropTableBrand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106251550310_addOrderandOrderDetailsTable.resx">
+      <DependentUpon>202106251550310_addOrderandOrderDetailsTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -18,8 +18,6 @@ namespace SkateBoard.Models
         public Category Category { get; set; }
         [Required]
         public int CategoryId { get; set; }
-        public Brand Brand { get; set; }
-        [Required]
-        public int BrandId { get; set; }
+        
     }
 }

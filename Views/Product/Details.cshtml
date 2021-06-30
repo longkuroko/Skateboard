@@ -1,0 +1,186 @@
+﻿@model SkateBoard.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    //Layout = "~/Views/Shared/_LayoutNew.cshtml";
+}
+
+@*<!doctype html>*@
+@*<html lang="en">
+
+<head>
+    <title>Title</title>
+     Required meta tags 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+     Bootstrap CSS 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+          integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/Asset/chitietsanpham.css">
+</head>*@
+
+<body>
+    <div class="container">
+        <div class="margin_top_60">
+            <a href="#" class="link_return">Trang chủ</a> &gt; <a href="#" class="link_return">chi tiết sản phẩm</a>
+            &gt;
+
+        </div>
+        <div class="row margin_tb_60">
+            <div class="col-12 col-sm-3 col-md-4 col-lg-5">
+                <div class="big_img">
+                    <img src="/@Html.DisplayFor(m => m.Image)">
+                </div>
+                <div class="thumb_img margin_top_60">
+                    <img src="/@Html.DisplayFor(m => m.Image)">
+                    <img src="/@Html.DisplayFor(m => m.Image)">
+                    <img src="/@Html.DisplayFor(m => m.Image)">
+                </div>
+            </div>
+            <div class="col-12 col-sm-9 col-md-8 col-lg-7 pl-5">
+                <h2><strong>@Model.Name</strong></h2>
+                <div class="star_icon">
+                    <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
+                    <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
+                </div>
+                <h3 class="text-dark margin_top_30"><strong>@Html.DisplayFor(model=>model.Price)</strong></h3>
+                <hr class="mt-4">
+                <p class="blue_text mt-4"><strong>@Html.DisplayFor(model => model.Category.Name)</strong></p>
+                
+                <p class="mt-4">
+                    <strong><span class="blue_text">THÔNG TIN SẢN PHẨM</span></strong>
+                    <br>@Html.DisplayFor(model=>model.Details)
+                </p>
+                <p class="blue_text mt-4"><strong>Số lượng:</strong></p>
+                <div class="float-left">
+                </div>
+                <div class="float-right">
+                    <a href="#" class="heart_icon"><i class="fas fa-heart" aria-hidden="true"></i></a>
+                    <a href="#" class="btn">Add to card</a>
+                </div>
+            </div>
+        </div>
+        <!--End row-->
+    </div>
+    <div class="container">
+        <div class="row margin_tb_60">
+            <div class="col-lg-12 text-center">
+                <h3><strong>CÓ THỂ BẠN QUAN TÂM</strong></h3>
+            </div>
+        </div>
+        <!--End row-->
+    </div>
+    <div id="new_collection" class="carousel slide carousel_01 margin_bottom_60" data-ride="carousel">
+        <div class="carousel-inner">
+            <ul class="carousel-indicators">
+                <li data="" target="#new_collection" data-slide-to="0" class=""></li>
+                <li data="" target="#new_collection" data-slide-to="1" class=""></li>
+                <li data="" target="#new_collection" data-slide-to="2" class="active"></li>
+                <li data="" target="#new_collection" data-slide-to="3"></li>
+            </ul>
+        </div>
+
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </div>
+        <!--End Carousel item-->
+
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </div>
+        <!--End Carousel item-->
+
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+
+                    <div class="col-lg-3">
+                        <a href="#"><img src="~/img/van3.png" class="collection_img"></a>
+                    </div>
+                </div>
+                <!--End row-->
+            </div>
+            <!--End container-->
+        </div>
+        <!--End Carousel item-->
+        <!--Prev next controller-->
+        <a class="carousel-control-prev" href="#new_collection" data-slide="prev">
+            <span class="fas fa-chevron-left"></span>
+        </a>
+
+        <a class="carousel-control-next" href="#new_collection" data-slide="next">
+            <span class="fas fa-chevron-right"></span>
+        </a>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

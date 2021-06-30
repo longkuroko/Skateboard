@@ -1,0 +1,43 @@
+﻿@model SkateBoard.Models.Cart
+
+@{
+    ViewBag.Title = "ShowtoCart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ShowtoCart</h2>
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+           <tr>
+               <th>Product Name</th>
+               <th>Image</th>
+               <th>Price</th>
+               <th>Qty</th>
+               <th>Total</th>
+           </tr>
+        </thead>
+        <tbody>
+            
+                @foreach (var item in Model.CartItems)
+                {
+                    double total = Convert.ToDouble(item.Product.Price * item.qty);
+                    <tr>
+                        <td>@Html.DisplayFor(model => item.Product.Name)</td>
+                        <td><img src="/@item.Product.Image" /></td>
+                        <td>@Html.DisplayFor(model => item.Product.Price)</td>
+                        <td>@Html.DisplayFor(model => item.qty)</td>
+                        <td>@total </td>
+                    </tr>
+
+            }
+                
+            </tbody>
+    </table>
+}
+else
+{
+    <h2>LONG DEP TRAI</h2>
+}
+

@@ -4,6 +4,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
+<link rel="stylesheet" href="~/Asset/shop.css"/>
 <section id="store" class="store py-5">
     <div class="container">
         <div class="row">
@@ -40,7 +41,7 @@
         <div class="row" class="store-items" id="store-items">
             @foreach (var item in Model)
             {
-                <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+                <div class=" col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
                     <div class="card ">
                         <div class="img-container card-item">
                             <a href="/Product/Details/@item.Id"><img src="/@item.Image" class="card-img-top store-img" alt=""></a>
@@ -50,13 +51,20 @@
                             </span>
                         </div>
                         <div class="card-body">
-                            <div class="card-text d-flex justify-content-between text-capitalize">
+                            <div class="card-text  justify-content-between text-capitalize">
                                 <h5 id="store-item-name">@item.Name</h5>
-                                <h5 class="store-item-value">
-                                    $ <strong id="store-item-price"
-                                              class="font-weight-bold">@item.Price</strong>
-                                </h5>
-                            </div>
+                                <h4 class="store-item-value">
+                                </h4>
+                                <div class="mt-2 mb-2">
+                                    <i class="fas fa-sun"></i>
+                                    <i class="fas fa-sun"></i>
+                                    <i class="fas fa-sun"></i>
+                                    <i class="fas fa-sun"></i>
+                                    <i class="fas fa-sun"></i>
+                                </div>
+                                <strong id="store-item-price"
+                                        class="font-weight-bold">GIÁ: @item.Price VNĐ</strong>
+                                    </div>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+﻿
 
 :root {
     --mainPink: #ef7998;
@@ -9,11 +9,6 @@
     --mainGrey: rgb(238, 238, 238);
 }
 
-body {
-    font-family: "Kaushan Script", cursive;
-    background: var(--mainWhite);
-    color: var(--mainBlack);
-}
 /* nav links */
 .navbar-toggler {
     outline: none !important;

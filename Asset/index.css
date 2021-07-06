@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Kaushan+Script");
+
 * {
   padding: 0;
   margin: 0;
@@ -6,15 +6,13 @@
 }
 
 body {
-  font-family: "Kaushan Script", cursive;
-  background: var(--mainWhite);
-  color: var(--mainBlack);
-  overflow-x: hidden;
+    overflow-x: hidden;
 }
 
 .logo {
   text-align: center;
 }
+
 
 .logo1 {
   text-align: center;

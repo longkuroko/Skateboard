@@ -13,7 +13,7 @@ namespace SkateBoard.Models
         //public DbSet<CartItems> CartItems { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
-        
+        public DbSet<Customer> Customers { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -24,6 +24,6 @@ namespace SkateBoard.Models
             return new ApplicationDbContext();
         }
 
-        //public System.Data.Entity.DbSet<SkateBoard.Models.ShopingCart> ShopingCarts { get; set; }
+      
     }
 }

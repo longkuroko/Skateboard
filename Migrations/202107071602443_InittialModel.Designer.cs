@@ -7,13 +7,13 @@ namespace SkateBoard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class updatetime2 : IMigrationMetadata
+    public sealed partial class InittialModel : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(updatetime2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(InittialModel));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106300841445_updatetime2"; }
+            get { return "202107071602443_InittialModel"; }
         }
         
         string IMigrationMetadata.Source

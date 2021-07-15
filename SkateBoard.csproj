@@ -303,8 +303,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -313,64 +314,48 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106241500368_initialModel.cs" />
-    <Compile Include="Migrations\202106241500368_initialModel.Designer.cs">
-      <DependentUpon>202106241500368_initialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107071602443_InittialModel.cs" />
+    <Compile Include="Migrations\202107071602443_InittialModel.Designer.cs">
+      <DependentUpon>202107071602443_InittialModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106250200534_CreateShopingCart.cs" />
-    <Compile Include="Migrations\202106250200534_CreateShopingCart.Designer.cs">
-      <DependentUpon>202106250200534_CreateShopingCart.cs</DependentUpon>
+    <Compile Include="Migrations\202107091329021_addTableCustomer.cs" />
+    <Compile Include="Migrations\202107091329021_addTableCustomer.Designer.cs">
+      <DependentUpon>202107091329021_addTableCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106250307059_UpateBRAND.cs" />
-    <Compile Include="Migrations\202106250307059_UpateBRAND.Designer.cs">
-      <DependentUpon>202106250307059_UpateBRAND.cs</DependentUpon>
+    <Compile Include="Migrations\202107091438221_UpdateCustomer.cs" />
+    <Compile Include="Migrations\202107091438221_UpdateCustomer.Designer.cs">
+      <DependentUpon>202107091438221_UpdateCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202106251437399_DropTableBrand.cs" />
-    <Compile Include="Migrations\202106251437399_DropTableBrand.Designer.cs">
-      <DependentUpon>202106251437399_DropTableBrand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106251550310_addOrderandOrderDetailsTable.cs" />
-    <Compile Include="Migrations\202106251550310_addOrderandOrderDetailsTable.Designer.cs">
-      <DependentUpon>202106251550310_addOrderandOrderDetailsTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106261840489_updateShopingCartItem.cs" />
-    <Compile Include="Migrations\202106261840489_updateShopingCartItem.Designer.cs">
-      <DependentUpon>202106261840489_updateShopingCartItem.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106281705015_UpdateTime1.cs" />
-    <Compile Include="Migrations\202106281705015_UpdateTime1.Designer.cs">
-      <DependentUpon>202106281705015_UpdateTime1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106300841445_updatetime2.cs" />
-    <Compile Include="Migrations\202106300841445_updatetime2.Designer.cs">
-      <DependentUpon>202106300841445_updatetime2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202106301449316_UpdateTime3.cs" />
-    <Compile Include="Migrations\202106301449316_UpdateTime3.Designer.cs">
-      <DependentUpon>202106301449316_UpdateTime3.cs</DependentUpon>
+    <Compile Include="Migrations\202107101729592_UpdateDb1.cs" />
+    <Compile Include="Migrations\202107101729592_UpdateDb1.Designer.cs">
+      <DependentUpon>202107101729592_UpdateDb1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\CartItems.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\IdentityModel\ApplicationUser.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\IdentityModel\ManageViewModels.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderDetail.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\ShopingCartItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\CheckoutViewModel.cs" />
     <Compile Include="ViewModel\MyOrderViewModel.cs" />
     <Compile Include="ViewModel\ProductListViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
+    <Compile Include="ViewModel\RigisterView.cs" />
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Asset\giohang.css" />
     <Content Include="Asset\chitietsanpham.css" />
     <Content Include="Asset\index.css" />
+    <Content Include="Asset\Login.css" />
     <Content Include="Asset\shop.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -420,6 +405,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
     <Content Include="libman.json" />
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -475,9 +461,17 @@
     <Content Include="Views\Product\Index.cshtml" />
     <Content Include="Views\ShopingCart\Index.cshtml" />
     <Content Include="Views\ShopingCart\ShowtoCart.cshtml" />
+    <Content Include="Views\ShopingCart\BagCart.cshtml" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\Register.cshtml" />
+    <Content Include="Views\Customer\ProfileName.cshtml" />
+    <Content Include="Views\ShopingCart\OrderSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Controllers\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -493,32 +487,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202106241500368_initialModel.resx">
-      <DependentUpon>202106241500368_initialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107071602443_InittialModel.resx">
+      <DependentUpon>202107071602443_InittialModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106250200534_CreateShopingCart.resx">
-      <DependentUpon>202106250200534_CreateShopingCart.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107091329021_addTableCustomer.resx">
+      <DependentUpon>202107091329021_addTableCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106250307059_UpateBRAND.resx">
-      <DependentUpon>202106250307059_UpateBRAND.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107091438221_UpdateCustomer.resx">
+      <DependentUpon>202107091438221_UpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106251437399_DropTableBrand.resx">
-      <DependentUpon>202106251437399_DropTableBrand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106251550310_addOrderandOrderDetailsTable.resx">
-      <DependentUpon>202106251550310_addOrderandOrderDetailsTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106261840489_updateShopingCartItem.resx">
-      <DependentUpon>202106261840489_updateShopingCartItem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106281705015_UpdateTime1.resx">
-      <DependentUpon>202106281705015_UpdateTime1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106300841445_updatetime2.resx">
-      <DependentUpon>202106300841445_updatetime2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202106301449316_UpdateTime3.resx">
-      <DependentUpon>202106301449316_UpdateTime3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107101729592_UpdateDb1.resx">
+      <DependentUpon>202107101729592_UpdateDb1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

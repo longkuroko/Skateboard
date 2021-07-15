@@ -7,13 +7,13 @@ namespace SkateBoard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateShopingCart : IMigrationMetadata
+    public sealed partial class UpdateDb1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateShopingCart));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDb1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106250200534_CreateShopingCart"; }
+            get { return "202107101729592_UpdateDb1"; }
         }
         
         string IMigrationMetadata.Source

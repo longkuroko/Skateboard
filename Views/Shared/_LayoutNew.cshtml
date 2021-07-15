@@ -10,10 +10,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="~/Asset/index.css" />
-    <link rel="stylesheet"  href="~/Asset/shop.css" />
+    <link rel="stylesheet" href="~/Asset/shop.css" />
     <link rel="stylesheet" href="~/Asset/chitietsanpham.css">
     <link rel="stylesheet" href="~/Asset/giohang.css" />
-
     @Styles.Render("~/Asset/css")
 
 </head>
@@ -22,7 +21,7 @@
     <header>
         <div class="logo">
             <div class="header">
-                <a href="../Home/index.html">
+                <a href="/Home/Index">
                     <div class="background">
                         <img src="../img/Skateboarding wallpaper for all the skateboarders _ Flatline.jpg" alt="">
                     </div>
@@ -41,8 +40,6 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/Product/Index">CỬA HÀNG<span class="sr-only">(current)</span></a>
-                        @*@Html.ActionLink("Sản Phẩm", "Index", "Product")*@
-
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../Discount/discount.html">KHUYẾN MÃI</a>
@@ -60,27 +57,46 @@
 
                 <!-- <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"> -->
                 <div class="left">
-                    <button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
-                        <a href="../Login/login.html">
+                    <div>
+                        <input class="btn btn-primary" type="button" value="Input">
+                    </div>
+                    
+                    @*<button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
+
+                        @if (Session["Customer"] != null)
+                        {
                             <i class="far fa-user"></i>
-                        </a>
-                    </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                                <a class="dropdown-item" href="#">Đơn hàng</a>
+                                <a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a>
+                            </div>
+
+                        }
+                        else
+                        {
+                            <a href="/Customer/Login">
+                                <i class="far fa-user"></i>
+                            </a>
+                        }
+                    </button>*@
+
                     <button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
-                        <a href=""><i class="fas fa-search"></i></a>
-                        @*@Html.Partial("_LoginPartial")*@
-                        @*@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })*@
+                        <a href="#"><i class="fas fa-search"></i></a>
                     </button>
                     <button class="btn btn-outline-success my-2 my-sm-0 timkiem">
-                        <a href="../Shopping card/card.html">
+                        <a href="/ShopingCart/ShowtoCart">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
+                        @Html.Action("BagCart", "ShopingCart")
                     </button>
+
                 </div>
             </div>
         </nav>
     </header>
     <div class="store">
-       @RenderBody()
+        @RenderBody()
     </div>
     <div class="site-footer">
         <div class="container">
@@ -151,10 +167,11 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
-  
+
     <script type="module" src="~/Asset/giohang.js"></script>
 </body>
 
 </html>
-
-</html>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)

@@ -1,59 +1,75 @@
-﻿@model SkateBoard.Models.Cart
+﻿
+@model SkateBoard.Models.Cart
 
 @{
     ViewBag.Title = "ShowtoCart";
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
 
-<h2>ShowtoCart</h2>
+<h2>GIỎ HÀNG</h2>
 @if (Model != null)
 {
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                <table class="table" style="">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Image</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CartItems)
+                        {
+                            double total = Convert.ToDouble(item.Product.Price * item.qty);
+                            <tr>
+                                <td><input id="btnThem" type="checkbox" data-view-id="" data-view-index="ca4d46e4-dbf3-11eb-9fc9-aec3650e6157"></td>
+                                <td>@Html.DisplayFor(model => item.Product.Name)</td>
+                                <td><img src="/@item.Product.Image" /></td>
+                                <td>@Html.DisplayFor(model => item.Product.Price)</td>
+                                <td>
+                                    @using (Html.BeginForm("UpdateQuantity", "ShopingCart"))
+                                    {
+                                        <input type="hidden" value="@item.Product.Id" name="ID_Product" />
+                                        @*<input type="number" value="@item.qty" name="Quantity"/>*@
+                                        <input aria-label="quantity" class="input-qty" max="10" min="1" name="Quantity" type="number" value="@item.qty">
+                                        <input type="submit" value="Update" />
+                                    }
 
-<div class="row">
-    <div class="col-6">
-        <table class="table" style="">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Product Name</th>
-                    <th>Image</th>
-                    <th>Price</th>
-                    <th>Qty</th>
-                    <th>Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.CartItems)
-                {
-                    double total = Convert.ToDouble(item.Product.Price * item.qty);
-                    <tr>
-                        <td><input id="btnThem" type="checkbox" data-view-id="" data-view-index="ca4d46e4-dbf3-11eb-9fc9-aec3650e6157"></td>
-                        <td>@Html.DisplayFor(model => item.Product.Name)</td>
-                        <td><img src="/@item.Product.Image" /></td>
-                        <td>@Html.DisplayFor(model => item.Product.Price)</td>
-                        <td><input aria-label="quantity" class="input-qty" max="10" min="1" name="" type="number" value="1"></td>
-                        @*<td>@Html.DisplayFor(model => item.qty)</td>*@
-                        <td>@total </td>
-                    </tr>
+                                </td>
+                                <td>@total</td>
+                                <td><a href="/ShopingCart/RemoveCart/@item.Product.Id"><i class="fas fa-trash-alt"></i></a></td>
+                            </tr>
 
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-4">
+                @{var customer = Session["Customer"] as SkateBoard.Models.Customer;}
+
+                <div class="styles__StyledShippingAddress-sc-1sjj51k-0 dBdDDu">
+                    <p class="heading"><span class="text">Giao tới</span><span data-view-id="cart_shipping_location.change" class="link">Thay đổi</span></p><p class="title"><b class="name">@customer.fullname</b><b class="phone">@customer.Phone</b></p><p class="address">@customer.Address</p>
+                </div>
+
+
+                <div class="prices">
+                    <ul class="prices__items"><li class="prices__item"><span class="prices__text">Tạm tính</span><span class="prices__value">@Model.TotalMoney()</span></li><li class="prices__item"><span class="prices__text">Giảm giá</span><span class="prices__value">0</span></li></ul><p class="prices__total"><span class="prices__text">Tổng cộng</span><span class="prices__value prices__value--final">@Model.TotalMoney()<i>(Đã bao gồm VAT nếu có)</i></span></p>
+                </div>
+                <button type="button" class="btn btn-primary btn-block">
+                    <a asp-controller="Order" asp-action="CheckOut">Mua Hàng</a>
+                </button>
                 }
-            </tbody>
-        </table>
-    </div>
-    <div class="col-lg-3">
-        <div class="styles__StyledShippingAddress-sc-1sjj51k-0 dBdDDu"><p class="heading"><span class="text">Giao tới</span><span data-view-id="cart_shipping_location.change" class="link">Thay đổi</span></p><p class="title"><b class="name">nguyễn tấn lợi</b><b class="phone">0938389406</b></p><p class="address">c3/21 hẻm c3 Phạm Hùng, Xã Bình Hưng, Huyện Bình Chánh, Hồ Chí Minh</p></div></div>
-    <div class="col-lg-3">
-            <div class="prices"><ul class="prices__items"><li class="prices__item"><span class="prices__text">Tạm tính</span><span class="prices__value">0đ</span></li><li class="prices__item"><span class="prices__text">Giảm giá</span><span class="prices__value">0đ</span></li></ul><p class="prices__total"><span class="prices__text">Tổng cộng</span><span class="prices__value prices__value--final">0đ<i>(Đã bao gồm VAT nếu có)</i></span></p></div>
+            </div>
+            <div>
+            </div>
         </div>
     </div>
 }
-else
-{
-    <h2>LONG DEP TRAI</h2>
-}
 
-<script>
-    document.querySelector('#btnThem').onclick = () => {
-        alert('ád');
-    }
-</script>
+

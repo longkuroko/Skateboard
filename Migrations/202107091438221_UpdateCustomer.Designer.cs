@@ -7,13 +7,13 @@ namespace SkateBoard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class DropTableBrand : IMigrationMetadata
+    public sealed partial class UpdateCustomer : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(DropTableBrand));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateCustomer));
         
         string IMigrationMetadata.Id
         {
-            get { return "202106251437399_DropTableBrand"; }
+            get { return "202107091438221_UpdateCustomer"; }
         }
         
         string IMigrationMetadata.Source

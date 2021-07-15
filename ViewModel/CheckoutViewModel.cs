@@ -6,10 +6,10 @@ using System.Web;
 
 namespace SkateBoard.ViewModel
 {
-    public class ShopingCartViewModel
+    public class CheckoutViewModel
     {
+        public Order Order { get; set; }
         public Cart Cart { get; set; }
-        public decimal ShopingCartTotal { get; set; }
-        
+        public double ShopingCartTotal { get; set; }
     }
 }

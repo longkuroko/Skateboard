@@ -27,17 +27,29 @@ namespace SkateBoard.Controllers
         //them san pham vao gio hang
         public ActionResult AddToCart(int id)
         {
-            var product = _dbContext.Products.SingleOrDefault(s => s.Id == id);
-            if(product != null)
+            if (Session["Customer"] == null)
             {
-                GetCart().AddToCart(product);
+                return RedirectToAction("Login", "Customer");
             }
-            return RedirectToAction("ShowtoCart", "ShopingCart");
+            else
+            {
+                var product = _dbContext.Products.SingleOrDefault(s => s.Id == id);
+                if (product != null)
+                {
+                    GetCart().AddToCart(product);
+                }
+                return RedirectToAction("ShowtoCart", "ShopingCart");
+            }
+           
         }
         //xem gio hang
         public ActionResult ShowtoCart()
         {
-            if(Session["Cart"] == null)
+            if (Session["Customer"] == null)
+            {
+                return RedirectToAction("Login", "Customer");
+            }
+            if (Session["Cart"] == null)
             {
                 return RedirectToAction("ShowtoCart", "ShopingCart");
             }

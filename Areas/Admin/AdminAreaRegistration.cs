@@ -17,7 +17,8 @@ namespace SkateBoard.Areas.Admin
             context.MapRoute(
                 "Admin_default",
                 "Admin/{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { action = "Index",Controller="Products" ,id = UrlParameter.Optional },
+                  new[] { "SkateBoard.Areas.Admin.Controllers" }
             );
         }
     }

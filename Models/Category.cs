@@ -13,6 +13,7 @@ namespace SkateBoard.Models
 
         [Required]
         [StringLength(255)]
+        [Display(Name ="Loại sản phẩm")]
         public string Name { get; set; }
 
         public ICollection<Product> Products { get; set; }

@@ -1,0 +1,27 @@
+﻿@model SkateBoard.Models.Category
+
+@{
+    ViewBag.Title = "Details";
+  Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Chi tiết loại sản phẩm</h2>
+
+<div>
+    <h4>Loại sản phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Chỉnh sửa", "Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Quay về", "Index")
+</p>

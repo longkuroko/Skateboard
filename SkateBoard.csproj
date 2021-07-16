@@ -504,10 +504,13 @@
     <Content Include="Views\Customer\Register.cshtml" />
     <Content Include="Views\Customer\ProfileName.cshtml" />
     <Content Include="Views\ShopingCart\OrderSuccess.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Product\ProductByCategory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

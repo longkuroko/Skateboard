@@ -1,10 +1,11 @@
-﻿@*@model IEnumerable<SkateBoard.Models.Product>*@
+﻿
 @using SkateBoard.Models
 @using PagedList.Mvc;
 @model PagedList.PagedList<Product>
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_LayoutNew.cshtml";
+    ViewBag.Title = "ProductByCategory";
+    //Layout = "~/Views/Shared/_LayoutNew.cshtml";
+
 }
 <link rel="stylesheet" href="~/Asset/shop.css" />
 <section id="store" class="store py-5">
@@ -15,21 +16,21 @@
 
             </div>
         </div>
-        @using (Html.BeginForm("Index", "Product", FormMethod.Get))
-        {
             <div class="row">
                 <div class="col-10 mx-auto col-md-6">
-                    <form>
+                    <form asp-controller="Product" asp-action="Index", method="get">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend ">
+                                @*<span class="input-group-text search-box" id="search-icon">
+                                        <i class="fas fa-search"></i>
+                                    </span>*@
                             </div>
-                            <input type="text" name="Search" class="form-control" placeholder='item....' id="search-item">
+                            <input type="text" class="form-control" value="@ViewBag.Keyword" placeholder='item....' id="search-item">
                             <input type="submit" class="btn btn-success" value="Tìm kiếm" />
                         </div>
                     </form>
                 </div>
             </div>
-        }
 
         <!-- store  items-->
 
@@ -74,5 +75,4 @@
     </div>
 </section>
 <br />
-@*Trang  @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))*@
 

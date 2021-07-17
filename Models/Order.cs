@@ -12,23 +12,25 @@ namespace SkateBoard.Models
         public int Id { get; set; }
 
         [Required]
-        public DateTime OrderPlaceTime { get; set; }
+        public DateTime OrderDay { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string Name { get; set; }
+        //[Required]
+        //[StringLength(255)]
+        //public string Name { get; set; }
 
-        [Required]
-        [StringLength(255)]
-        public string Address { get; set; }
+        //[Required]
+        //[StringLength(255)]
+        //public string Address { get; set; }
 
-        [Required]
-        [StringLength(10)]
-        public string PhoneNumber { get; set; }
+        //[Required]
+        //[StringLength(10)]
+        //public string PhoneNumber { get; set; }
 
-        [StringLength(255)]
-        [Required]
-        public string Email { get; set; }
+        //[StringLength(255)]
+        //[Required]
+        //public string Email { get; set; }
+        
+
 
         public decimal OrderTotal { get; set; }
 

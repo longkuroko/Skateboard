@@ -344,6 +344,10 @@
     <Compile Include="Migrations\202107151419294_UpdateDisplayName.Designer.cs">
       <DependentUpon>202107151419294_UpdateDisplayName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107171335346_UpdateOrder.cs" />
+    <Compile Include="Migrations\202107171335346_UpdateOrder.Designer.cs">
+      <DependentUpon>202107171335346_UpdateOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
@@ -506,6 +510,7 @@
     <Content Include="Views\ShopingCart\OrderSuccess.cshtml" />
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\ProductByCategory.cshtml" />
+    <Content Include="Views\ShopingCart\Checkout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -540,6 +545,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107151419294_UpdateDisplayName.resx">
       <DependentUpon>202107151419294_UpdateDisplayName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107171335346_UpdateOrder.resx">
+      <DependentUpon>202107171335346_UpdateOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

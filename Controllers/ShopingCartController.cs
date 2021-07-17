@@ -117,9 +117,10 @@ namespace SkateBoard.Controllers
                 Customer customer = (Customer)Session["Customer"];
                 Order order = new Order();
 
+                var tongtien = cart.TotalMoney().ToString();
                 order.CustomerId = customer.Id;
-                order.OrderPlaceTime = DateTime.Now;
-
+                order.OrderDay = DateTime.Now;
+                order.OrderTotal = Convert.ToDecimal(tongtien);
                 _dbContext.Orders.Add(order);
                 foreach (var item in cart.CartItems)
                 {
@@ -144,7 +145,5 @@ namespace SkateBoard.Controllers
         {
             return View();
         }
-        
-
     }
 }

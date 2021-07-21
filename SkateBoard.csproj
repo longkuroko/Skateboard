@@ -324,29 +324,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107071602443_InittialModel.cs" />
-    <Compile Include="Migrations\202107071602443_InittialModel.Designer.cs">
-      <DependentUpon>202107071602443_InittialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091329021_addTableCustomer.cs" />
-    <Compile Include="Migrations\202107091329021_addTableCustomer.Designer.cs">
-      <DependentUpon>202107091329021_addTableCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091438221_UpdateCustomer.cs" />
-    <Compile Include="Migrations\202107091438221_UpdateCustomer.Designer.cs">
-      <DependentUpon>202107091438221_UpdateCustomer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107101729592_UpdateDb1.cs" />
-    <Compile Include="Migrations\202107101729592_UpdateDb1.Designer.cs">
-      <DependentUpon>202107101729592_UpdateDb1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107151419294_UpdateDisplayName.cs" />
-    <Compile Include="Migrations\202107151419294_UpdateDisplayName.Designer.cs">
-      <DependentUpon>202107151419294_UpdateDisplayName.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107171335346_UpdateOrder.cs" />
-    <Compile Include="Migrations\202107171335346_UpdateOrder.Designer.cs">
-      <DependentUpon>202107171335346_UpdateOrder.cs</DependentUpon>
+    <Compile Include="Migrations\202107171423530_InitialModel.cs" />
+    <Compile Include="Migrations\202107171423530_InitialModel.Designer.cs">
+      <DependentUpon>202107171423530_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
@@ -370,6 +350,8 @@
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\login1.js" />
+    <Content Include="Asset\login1.css" />
     <Content Include="Asset\giohang.css" />
     <Content Include="Asset\chitietsanpham.css" />
     <Content Include="Asset\index.css" />
@@ -531,23 +513,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107071602443_InittialModel.resx">
-      <DependentUpon>202107071602443_InittialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091329021_addTableCustomer.resx">
-      <DependentUpon>202107091329021_addTableCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091438221_UpdateCustomer.resx">
-      <DependentUpon>202107091438221_UpdateCustomer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107101729592_UpdateDb1.resx">
-      <DependentUpon>202107101729592_UpdateDb1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107151419294_UpdateDisplayName.resx">
-      <DependentUpon>202107151419294_UpdateDisplayName.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107171335346_UpdateOrder.resx">
-      <DependentUpon>202107171335346_UpdateOrder.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107171423530_InitialModel.resx">
+      <DependentUpon>202107171423530_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -13,26 +13,49 @@
     <link rel="stylesheet" href="~/Asset/shop.css" />
     <link rel="stylesheet" href="~/Asset/chitietsanpham.css">
     <link rel="stylesheet" href="~/Asset/giohang.css" />
+    <link href="~/Asset/login1.css" />
+ 
+    
     @Styles.Render("~/Asset/css")
 
 </head>
 
 <body>
+    <style>
+
+        .timkiem1 {
+            left: -58px !important;
+            bottom: -42px!important;
+           
+        }
+
+        .timkiem {
+            position: absolute !important;
+           
+        }
+        #timkiem2 {
+            transform: translate(12px, 18px);
+        }
+        .dropdown {
+            transform: translate(-37px, -21px);
+        }
+        #dropdownMenuButton {
+            transform: translate(-24px, 20px);
+        }
+    </style>
     <header>
         <div class="logo">
             <div class="header">
                 <a href="/Home/Index">
                     <div class="background">
-                        <img src="../img/Skateboarding wallpaper for all the skateboarders _ Flatline.jpg" alt="">
+                        <img src="/img/Skateboarding wallpaper for all the skateboarders _ Flatline.jpg" alt="">
                     </div>
-                    <div class="logo1"> <img src="../img/Untitled-1-01-removebg-preview.png" alt="logo"></div>
+                    <div class="logo1"> <img src="/img/Untitled-1-01-removebg-preview.png" alt="logo"></div>
                 </a>
             </div>
         </div>
         <nav class="navbar navbar-expand-lg navbar-light text-white">
-            <!-- <a class="navbar-brand" href="#">
-                <img src="../img/Untitled-1-01.png" alt="logo">
-            </a> -->
+          
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -58,43 +81,90 @@
                 <!-- <input class="form-control mr-sm-2" type="search" placeholder="Tìm kiếm..." aria-label="Search"> -->
                 <div class="left">
                     @*<div>
-                        <input class="btn btn-primary" type="button" value="Input">
-                    </div>*@
-                    
-                    <button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
+            <input class="btn btn-primary" type="button" value="Input">
+        </div>*@
 
-                        @if (Session["Customer"] != null)
+                    @*<button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
+
+            @if (Session["Customer"] != null)
+            {
+                <i class="far fa-user"></i>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                    <a class="dropdown-item" href="#">Đơn hàng</a>
+                    <a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a>
+                </div>
+
+            }
+            else
+            {
+                <a href="/Customer/Login">
+                    <i class="far fa-user"></i>
+                </a>
+            }
+        </button>*@
+                    <div class="dropdown ">
+                        @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
+                        @if (userLogin != null)
                         {
-                            <i class="far fa-user"></i>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Thông tin cá nhân</a>
-                                <a class="dropdown-item" href="#">Đơn hàng</a>
-                                <a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a>
-                            </div>
+                            <span class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @userLogin.Username
+                            </span>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <li><a class="dropdown-item" href="#">Thong tin khach hang</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="#">Quan ly don hang</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/Customer/LogOut">Dang xuat</a></li>
+                                <li>
+                                    <a class="dropdown-item" href="/ShopingCart/ShowtoCart">Giỏ hàng</a>
+                                    <i class="fas fa-shopping-cart"></i>
+                                    @Html.Action("BagCart", "ShopingCart")
+                                </li>
 
+                            </ul>
                         }
                         else
                         {
+
+
+                        <li class="btn btn-outline-success my-2 my-sm-0 timkiem1 timkiem">
                             <a href="/Customer/Login">
                                 <i class="far fa-user"></i>
                             </a>
+                        </li>
                         }
-                    </button>
+                        @*<li class="btn btn-outline-success my-2 my-sm-0 timkiem timkiem2" id="timkiem2">
+                            <a href="/ShopingCart/ShowtoCart">
+                                <i class="fas fa-shopping-cart"></i>
+                            </a>
+                            @Html.Action("BagCart", "ShopingCart")
+                        </li>*@
+                    
+                      
+                    </div>
 
-                    <button class="btn btn-outline-success my-2 my-sm-0 timkiem mr-3">
-                        <a href="#"><i class="fas fa-search"></i></a>
-                    </button>
-                    <button class="btn btn-outline-success my-2 my-sm-0 timkiem">
-                        <a href="/ShopingCart/ShowtoCart">
-                            <i class="fas fa-shopping-cart"></i>
-                        </a>
-                        @Html.Action("BagCart", "ShopingCart")
-                    </button>
+
+
+
+
+
+
+
+
+                   
 
                 </div>
             </div>
         </nav>
     </header>
+
+
+
+
+
+
+
     <div class="store">
         @RenderBody()
     </div>
@@ -107,7 +177,7 @@
                             <div class="col-xs-12 col-sm-12 col-lg-6">
                                 <div class="footer-widget">
                                     <a href="/" class="logo-wrapper inline-block">
-                                        <img src="../img/Untitled-1-01-removebg-preview.png" alt="logo ">
+                                        <img src="~/img/Untitled-1-01-removebg-preview.png" alt="logo ">
                                     </a>
                                     <ul class="list-menu list-showroom margin-top-15">
                                         <li>
@@ -168,10 +238,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 
-    <script type="module" src="~/Asset/giohang.js"></script>
+   
 </body>
 
 </html>
 @Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
+
+
+

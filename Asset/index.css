@@ -84,7 +84,7 @@ body {
 .banner {
   background-color: #ffffff;
   width: 90%;
-  padding-top: 40px;
+  padding-top: 75px !important;
   margin: 0px auto;
 }
 
@@ -367,7 +367,7 @@ h3 {
   height: 40px;
   width: 40px;
   border-radius: 200%;
-  position: relative;
-  left: -18%;
+  position: absolute !important;
+  left: 90%;
   background: #000;
 }

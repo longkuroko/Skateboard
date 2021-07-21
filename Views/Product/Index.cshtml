@@ -7,7 +7,28 @@
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
 <link rel="stylesheet" href="~/Asset/shop.css" />
+
+
+
 <section id="store" class="store py-5">
+
+
+
+
+    <style>
+        .page {
+            margin-left: 434%;
+            margin-bottom: -65px;
+            margin-top: 13px;
+        }
+        .pagination >li {
+            border: 1px solid black;
+            padding: 2px 10px;
+        }
+        .pagination li > a {
+            color: #ff0808;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class=" col-lg-8 mx-auto d-flex justify-content-around my-2 sortBtn flex-wrap">
@@ -65,7 +86,7 @@
                         </div>
                     }
             <div class="row text-center">
-                <div class="col-sm-12">
+                <div class="col-sm-12 page">
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
                 </div>
             </div>
@@ -74,5 +95,5 @@
     </div>
 </section>
 <br />
-@*Trang  @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))*@
+
 

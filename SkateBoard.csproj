@@ -319,6 +319,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\OrderDetailsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ShopingCartController.cs" />
     <Compile Include="Global.asax.cs">
@@ -329,6 +331,7 @@
       <DependentUpon>202107171423530_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -342,7 +345,9 @@
     <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\CheckoutViewModel.cs" />
+    <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\MyOrderViewModel.cs" />
     <Compile Include="ViewModel\ProductListViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
@@ -350,6 +355,7 @@
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\Chitietkhachhang.css" />
     <Content Include="Asset\login1.js" />
     <Content Include="Asset\login1.css" />
     <Content Include="Asset\giohang.css" />
@@ -493,10 +499,20 @@
     <Content Include="Views\Product\Category.cshtml" />
     <Content Include="Views\Product\ProductByCategory.cshtml" />
     <Content Include="Views\ShopingCart\Checkout.cshtml" />
+    <Content Include="Views\Customer\Details.cshtml" />
+    <Content Include="Views\Orders\Index.cshtml" />
+    <Content Include="Views\Orders\Details.cshtml" />
+    <Content Include="Views\OrderDetails\Create.cshtml" />
+    <Content Include="Views\OrderDetails\Delete.cshtml" />
+    <Content Include="Views\OrderDetails\Details.cshtml" />
+    <Content Include="Views\OrderDetails\Edit.cshtml" />
+    <Content Include="Views\OrderDetails\Index.cshtml" />
+    <Content Include="Views\Customer\_CustomerModelPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="UploadFile\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>

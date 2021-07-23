@@ -38,6 +38,8 @@ namespace SkateBoard.Controllers
             }
             Product product = db.Products.Find(id);
             ViewBag.RelatedProducts = new List<Product>(RelatedProducts(productid));
+            //var relatedProduct = new List<Product>(RelatedProducts(productid));
+
             if (product == null)
             {
                 return HttpNotFound();
@@ -74,7 +76,7 @@ namespace SkateBoard.Controllers
         public List<Product> RelatedProducts(int id)
         {
             var product = db.Products.Find(id);
-            return db.Products.Where(x => x.Id != id && x.CategoryId == product.CategoryId).ToList();
+            return db.Products.Where(x => x.Id != id && x.CategoryId == product.CategoryId).Take(4).ToList();
         }
 
         public ActionResult Category()

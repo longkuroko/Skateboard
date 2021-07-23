@@ -377,30 +377,19 @@ Dark blue: #034873;
             <div class="col-lg-12 text-center">
                 <h3><strong>CÓ THỂ BẠN QUAN TÂM</strong></h3>
             </div>
+            <div><a href="/Product/">Xem tất cả</a></div>
         </div>
         <!--End row-->
     </div>
-    <div id="new_collection" class="carousel slide carousel_01 margin_bottom_60" data-ride="carousel">
-        <div class="carousel-inner">
-            <ul class="carousel-indicators">
-                <li data="" target="#new_collection" data-slide-to="0" class=""></li>
-                <li data="" target="#new_collection" data-slide-to="1" class=""></li>
-                <li data="" target="#new_collection" data-slide-to="2" class="active"></li>
-                <li data="" target="#new_collection" data-slide-to="3"></li>
-            </ul>
-        </div>
-
         <div class="carousel-item">
             <div class="container">
                 <div class="row">
                     @foreach (var item in relatedProducts)
-                    {
+                    {                    
                         <div class="col-lg-3">
-                            <a href="#"><img src="~/@item.Image" class="collection_img"></a>
+                            <a href="/Product/Details/@item.Id"><img src="~/@item.Image" class="collection_img">@item.Name</a>
                         </div>
                     }
-
-               
                 </div>
                 <!--End row-->
             </div>
@@ -430,4 +419,3 @@ Dark blue: #034873;
             crossorigin="anonymous"></script>
 </body>
 
-</html>

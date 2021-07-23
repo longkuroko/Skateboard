@@ -12,6 +12,7 @@ namespace SkateBoard.Models
         public int Id { get; set; }
 
         [Required]
+        [Display(Name ="Ngày đặt hàng")]
         public DateTime OrderDay { get; set; }
 
         //[Required]
@@ -31,7 +32,7 @@ namespace SkateBoard.Models
         //public string Email { get; set; }
         
 
-
+        [Display(Name ="Tổng đơn hàng")]
         public decimal OrderTotal { get; set; }
 
         [Required]

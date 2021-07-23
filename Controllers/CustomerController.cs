@@ -1,7 +1,10 @@
 ﻿using SkateBoard.Models;
+using SkateBoard.ViewModel;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -100,65 +103,47 @@ namespace SkateBoard.Controllers
                          
         }
 
+        public ActionResult Details(int? id)
+        {
+            int customerId = id ?? default(int);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            Customer customer = db.Customers.Find(id);
+            if (customer == null)
+            {
+                return HttpNotFound();
+            }
+            return View(customer);
+        }
         //[HttpPost]
-        //public JsonResult ShowInfo(int id)
+        //public ActionResult Details([Bind(Include = "fullname,Address,Email,Phone")] Customer customer)
         //{
-        //    var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
-        //    if (customer != null)
+        //    if (ModelState.IsValid)
         //    {
-        //        return Json(new
-        //        {
-        //            FullName = customer.fullname,                    
-        //            Username = customer.Username,
-        //            Address = customer.Address,
-        //            Phone = customer.Phone,
-        //            Email = customer.Email
-        //        }, JsonRequestBehavior.AllowGet);
-        //    }
-        //    else
-        //    {
-        //        return Json("CannotFindCustomer", JsonRequestBehavior.AllowGet);
-        //    }
-        //}
-
-        //[HttpPost]
-        //public JsonResult UpdateInfo(int id, string fullName, string username, string address, string phone, string email)
-        //{
-
-        //    var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
-        //    customer.fullname = fullName;
-            
-        //    customer.Username = username;
-        //    customer.Address = address;
-        //    customer.Phone = phone;
-        //    customer.Email = email;
-
-        //    UpdateModel(customer);
-        //    db.SaveChanges();
-
-        //    Session["UserLogin"] = customer;
-
-        //    return Json("Success", JsonRequestBehavior.AllowGet);
-        //}
-
-
-        //[HttpPost]
-        //public JsonResult ChangePwd(int id, string newPwd)
-        //{
-        //    var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
-        //    if (customer != null)
-        //    {
-        //        customer.Password = newPwd;
-        //        UpdateModel(customer);
+        //        db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
         //        db.SaveChanges();
-        //        Session["UserLogin"] = customer;
-        //        return Json("Success", JsonRequestBehavior.AllowGet);
+        //        return RedirectToAction("Details", "Customer");
         //    }
-        //    else
-        //    {
-        //        return Json("CannotFindCustomer", JsonRequestBehavior.AllowGet);
-        //    }
+        //    return View(customer);
         //}
+
+        //public ActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Customer customer = db.Customers.Find(id);
+        //    if (customer == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(customer);
+        //}
+
     }
 
 }

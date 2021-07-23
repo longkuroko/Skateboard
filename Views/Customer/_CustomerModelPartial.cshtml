@@ -1,0 +1,51 @@
+﻿@model SkateBoard.Models.Customer
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="Edit">
+                <div class="modal-body">
+                    <div class="form-control form-control_popup">
+                        <div>
+                            <label asp-for="fullname"  class="input-label">Họ và tên</label>
+                            <div>
+                                <input asp-for="fullname"  type="text" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                            </div>
+                        </div>
+                        <div style="transform: translateY(-34px);">
+                            <label class="input-label">Số Điện thoại </label>
+                            <div>
+                                <input type="text" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                            </div>
+                        </div>
+
+                        <div style="transform: translateY(-65px);">
+                            <label class="input-label">Email</label>
+                            <div>
+                                <input type="text" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                            </div>
+                        </div>
+                        <div style="transform: translateY(-65px);">
+                            <label class="input-label">Địa chỉ</label>
+                            <div>
+                                <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                    <button type="submit" class="btn btn-primary">Lưu</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

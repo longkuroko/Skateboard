@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -10,7 +11,6 @@ using SkateBoard.Models;
 
 namespace SkateBoard.Areas.Admin.Controllers
 {
-    
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -49,15 +49,26 @@ namespace SkateBoard.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
+
+                    if(file == null)
+                    {
+                        ViewBag.Thongbao = "Vui lòng chọn ảnh cho sản phẩm";
+                        return View();
+                    }
+                    else
+                    {
+                        var filename = Path.GetFileName(file.FileName);
+                        var path = Path.Combine(Server.MapPath("~/UploadFile"), filename);
+                        product.Image = filename;
+                    }
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
@@ -129,5 +140,7 @@ namespace SkateBoard.Areas.Admin.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

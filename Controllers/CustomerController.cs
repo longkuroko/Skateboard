@@ -117,21 +117,9 @@ namespace SkateBoard.Controllers
             }
             return View(customer);
         }
-        //[HttpPost]
-        //public ActionResult Details(Customer customer)
-        //{
-        //    var updateCustomer = db.Customers.Where(x => x.Id == customer.Id).FirstOrDefault();
-        //    updateCustomer.fullname = customer.fullname;
-        //    updateCustomer.Email = customer.Email;
-        //    updateCustomer.Phone = customer.Phone;
-        //    updateCustomer.Address = customer.Address;
-        //    db.SaveChanges();
-
-        //    return View("Details", updateCustomer);
-        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Username,Password,fullname,Address,Email,Phone")] Customer customer)
+        public ActionResult Details([Bind(Include = "Id,Username,Password,fullname,Address,Email,Phone")] Customer customer)
         {
             if (ModelState.IsValid)
             {

@@ -16,6 +16,7 @@ namespace SkateBoard.Models
         [Required]
         [StringLength(255)]
         [Display(Name = "Mật khẩu")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         [Display(Name = "Tên khách hàng")]
         public string fullname { get; set; }

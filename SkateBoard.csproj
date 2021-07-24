@@ -342,6 +342,10 @@
     <Compile Include="Migrations\202107240945360_deleteTableAdmin.Designer.cs">
       <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107241014180_UpdateCustomer.cs" />
+    <Compile Include="Migrations\202107241014180_UpdateCustomer.Designer.cs">
+      <DependentUpon>202107241014180_UpdateCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
@@ -360,7 +364,6 @@
     <Compile Include="ViewModel\CheckoutViewModel.cs" />
     <Compile Include="ViewModel\CustomerViewModel.cs" />
     <Compile Include="ViewModel\MyOrderViewModel.cs" />
-    <Compile Include="ViewModel\ProductListViewModel.cs" />
     <Compile Include="ViewModel\ProductViewModel.cs" />
     <Compile Include="ViewModel\RigisterView.cs" />
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
@@ -552,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107240945360_deleteTableAdmin.resx">
       <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107241014180_UpdateCustomer.resx">
+      <DependentUpon>202107241014180_UpdateCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

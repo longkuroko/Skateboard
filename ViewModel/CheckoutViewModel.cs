@@ -8,7 +8,7 @@ namespace SkateBoard.ViewModel
 {
     public class CheckoutViewModel
     {
-        public Order Order { get; set; }
+        public Customer customer { get; set; }
         public Cart Cart { get; set; }
         public double ShopingCartTotal { get; set; }
     }

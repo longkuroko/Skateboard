@@ -33,7 +33,7 @@ namespace SkateBoard.Controllers
 
             if(login == null)
             {
-                ViewBag.error = "Login failed";
+               ModelState.AddModelError("","Tên đăng nhập hoặc mật khẩu không đúng");
                 return View("Login", "Customer");
 
             }
@@ -86,16 +86,15 @@ namespace SkateBoard.Controllers
                         Phone = customer.Phone
                         
                     };
-
-
                     db.Customers.Add(customer1);
                     db.SaveChanges();
+                    ViewBag.ThongBao = "Đăng nhập thành công";
                     return RedirectToAction("Login", "Customer");
                 }
             }
             else
             {
-                ViewBag.error = "Tên đăng nhập đã tồn tại!";
+                ViewBag.Error = "Tên đăng nhập đã tồn tại!";
                 return View();
             }
 
@@ -119,30 +118,29 @@ namespace SkateBoard.Controllers
             return View(customer);
         }
         //[HttpPost]
-        //public ActionResult Details([Bind(Include = "fullname,Address,Email,Phone")] Customer customer)
+        //public ActionResult Details(Customer customer)
         //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
-        //        db.SaveChanges();
-        //        return RedirectToAction("Details", "Customer");
-        //    }
-        //    return View(customer);
-        //}
+        //    var updateCustomer = db.Customers.Where(x => x.Id == customer.Id).FirstOrDefault();
+        //    updateCustomer.fullname = customer.fullname;
+        //    updateCustomer.Email = customer.Email;
+        //    updateCustomer.Phone = customer.Phone;
+        //    updateCustomer.Address = customer.Address;
+        //    db.SaveChanges();
 
-        //public ActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Customer customer = db.Customers.Find(id);
-        //    if (customer == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(customer);
+        //    return View("Details", updateCustomer);
         //}
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Username,Password,fullname,Address,Email,Phone")] Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Details");
+            }
+            return View(customer);
+        }
 
     }
 

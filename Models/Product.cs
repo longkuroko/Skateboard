@@ -19,7 +19,7 @@ namespace SkateBoard.Models
         public string Image { get; set; }
         [Display(Name = "Chi tiết sản phẩm")]
         public string Details { get; set; }
-
+        [Display(Name = "Danh mục")]
         public Category Category { get; set; }
         [Required]
         public int CategoryId { get; set; }      

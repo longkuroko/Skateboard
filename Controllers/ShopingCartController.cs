@@ -102,10 +102,13 @@ namespace SkateBoard.Controllers
             {
                 return RedirectToAction("Index", "Product");
             }
-            //List<Cart> listgiohang= cart.CartItems();
-            ViewBag.Tongsoluong = cart.TotalQuantity();
-            ViewBag.Tongtien = cart.TotalMoney();
-            return View();
+
+            CheckoutViewModel viewModel = new CheckoutViewModel
+            {
+                customer = (Customer)Session["Customer"],
+                Cart = Session["Cart"] as Cart
+            };
+            return View(viewModel);
         }
 
         [HttpPost]

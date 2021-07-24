@@ -167,32 +167,38 @@
                 <div class="content-container method-container">
                     <div class="content-title">Thông tin tài khoản</div>
                     <div class="bgWhite profileUserContent">
-                        @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
-                            @if (userLogin != null)
+                        @using (Html.BeginForm())
                             {
-                                <form action="/Customer/Details/@userLogin.Id">
+                                var userLogin = Session["Customer"] as SkateBoard.Models.Customer;
+                                if (userLogin != null)
+                                {
+
+                                <form>
                                     <div class="form-control">
+                                        @Html.HiddenFor(m => m.Id)
+                                        @Html.HiddenFor(m => m.Username)
+                                        @Html.HiddenFor(m => m.Password)
                                         <div>
-                                            <label class="input-label">Họ và tên</label>
+                                            <label for="@Html.DisplayFor(model => model.fullname)" class="input-label">Họ và tên</label>
                                             <div>
-                                                <input type="text" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                                <input id="Id" name="Id" type="text" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
                                             </div>
                                         </div>
                                         <div style="transform: translateY(-34px);">
-                                            <label class="input-label">Số Điện thoại </label>
+                                            <label for="@Html.DisplayFor(model => model.Phone)" class="input-label">Số Điện thoại </label>
                                             <div>
                                                 <input type="text" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
                                             </div>
                                         </div>
 
                                         <div style="transform: translateY(-65px);">
-                                            <label class="input-label">Email</label>
+                                            <label for="@Html.DisplayFor(model => model.Email)" class="input-label">Email</label>
                                             <div>
                                                 <input type="text" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
                                             </div>
                                         </div>
                                         <div style="transform: translateY(-65px);">
-                                            <label class="input-label">Địa chỉ</label>
+                                            <label for="@Html.DisplayFor(model => model.Address)" class="input-label">Địa chỉ</label>
                                             <div>
                                                 <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
                                             </div>
@@ -205,137 +211,103 @@
                                         </button>
                                     </div>
                                 </form>
-                                <!--UPDATE THONG TIN CA NHANH-->
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <form>
-                                                <div class="modal-body">
-                                                    <div class="form-control form-control_popup">
-                                                        <input type="hidden" id="hfpatientId" />
-                                                        <div>
-                                                            <label for="txtCustomerName" class="input-label">Họ và tên</label>
-                                                            <div>
-                                                                <input type="text" id="txtCustomerName" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
-                                                            </div>
-                                                        </div>
-                                                        <div style="transform: translateY(-34px);">
-                                                            <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
-                                                            <div>
-                                                                <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
-                                                            </div>
-                                                        </div>
-
-                                                        <div style="transform: translateY(-65px);">
-                                                            <label for="txtPatientEmail" class="input-label">Email</label>
-                                                            <div>
-                                                                <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
-                                                            </div>
-                                                        </div>
-                                                        <div style="transform: translateY(-65px);">
-                                                            <label for="txtAddress" class="input-label">Địa chỉ</label>
-                                                            <div>
-                                                                <input type="text" id="txtAddress" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary" onclick="UpdateCustomer();">Save changes</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <!--DOI MAT KHAU-->
-                                <div class="modal fade" id="PASSWORD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog_pass" role="document">
-                                        <div class="modal-content modal_password">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">ĐỔI MẬT KHẨU</h5>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <div class="form-control form-control_popup ">
-                                                    <div>
-                                                        <label class="input-label">Mật khẩu cũ</label>
-                                                        <div>
-                                                            <input type="password" class="content1 conten_password" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
-                                                        </div>
-                                                    </div>
-                                                    <div style="transform: translateY(-34px);">
-                                                        <label class="input-label">Mật khẩu mới</label>
-                                                        <div>
-                                                            <input type="password" class="content1 conten_password" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
-                                                        </div>
-                                                    </div>
-
-                                                    <div style="transform: translateY(-65px);">
-                                                        <label class="input-label">Confirm</label>
-                                                        <div>
-                                                            <input type="password" class="content1 conten_password" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
-                                                <button type="button" class="btn btn-primary">Lưu</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                             }
+
+                            <!--UPDATE THONG TIN CA NHANH-->
+                            @*<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <form>
+                            <div class="modal-body">
+                                <div class="form-control form-control_popup">
+                                    <input type="hidden" id="hfpatientId" />
+                                    <div>
+                                        <label for="txtCustomerName" class="input-label">Họ và tên</label>
+                                        <div>
+                                            <input type="text" id="txtCustomerName" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                        </div>
+                                    </div>
+                                    <div style="transform: translateY(-34px);">
+                                        <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
+                                        <div>
+                                            <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                        </div>
+                                    </div>
+
+                                    <div style="transform: translateY(-65px);">
+                                        <label for="txtPatientEmail" class="input-label">Email</label>
+                                        <div>
+                                            <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                        </div>
+                                    </div>
+                                    <div style="transform: translateY(-65px);">
+                                        <label for="txtAddress" class="input-label">Địa chỉ</label>
+                                        <div>
+                                            <input type="text" id="txtAddress" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary" onclick="UpdateCustomer();">Save changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>*@
+
+
+                            <!--DOI MAT KHAU-->
+                            <div class="modal fade" id="PASSWORD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog_pass" role="document">
+                                    <div class="modal-content modal_password">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">ĐỔI MẬT KHẨU</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="form-control form-control_popup ">
+                                                <div>
+                                                    <label class="input-label">Mật khẩu cũ</label>
+                                                    <div>
+                                                        <input type="password" class="content1 conten_password" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                                    </div>
+                                                </div>
+                                                <div style="transform: translateY(-34px);">
+                                                    <label class="input-label">Mật khẩu mới</label>
+                                                    <div>
+                                                        <input type="password" class="content1 conten_password" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                                    </div>
+                                                </div>
+
+                                                <div style="transform: translateY(-65px);">
+                                                    <label class="input-label">Confirm</label>
+                                                    <div>
+                                                        <input type="password" class="content1 conten_password" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
+                                            <button type="button" class="btn btn-primary">Lưu</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-<script src="~/Scripts/bootstrap.min.js"></script>
-<script type="text/javascript">
-    function UpdateCustomer() {
-        var res = ValidateUserInput();
-        if (res == false) {
-            return false;
-        }
-        var patientObj = {
-             Id: $('#hfpatientId').val(),
-            fullname: $('#txtCustomerName').val(),
-            Phone: $('#txtPatientNumber').val(),
-            Email: $('#txtPatientEmail').val(),
-            Address: $('#txtAddress').val(),
-        };
-        if (!patientObj.Id || patientObj.Id <= 0) {
-            alert("Invalid Id!");
-            return false;
-        }
-        $.ajax({
-            url: "/Customer/UpdateCustomer",
-            data: JSON.stringify(patientObj),
-            type: "POST",
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                BindpatientData();
-                ClearAllInput();
-            },
-            error: function (errormessage) {
-                alert(errormessage.responseText);
-            }
-        });
-    }
-
-</script>

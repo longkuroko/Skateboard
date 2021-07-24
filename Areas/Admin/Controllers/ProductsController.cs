@@ -41,6 +41,7 @@ namespace SkateBoard.Areas.Admin.Controllers
         // GET: Admin/Products/Create
         public ActionResult Create()
         {
+           
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
             return View();
         }
@@ -48,32 +49,56 @@ namespace SkateBoard.Areas.Admin.Controllers
         // POST: Admin/Products/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product, HttpPostedFileBase file)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+
+        //            if(file == null)
+        //            {
+        //                ViewBag.Thongbao = "Vui lòng chọn ảnh cho sản phẩm";
+        //                return View();
+        //            }
+        //            else
+        //            {
+        //                var filename = Path.GetFileName(file.FileName);
+        //                var path = Path.Combine(Server.MapPath("~/UploadFile"), filename);
+        //                if (System.IO.File.Exists(path))
+        //                {
+        //                    ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+        //                }
+        //                else
+        //                {
+        //                    file.SaveAs(path);
+        //                }
+        //                product.Image = filename;
+        //                db.Products.Add(product);
+        //                db.SaveChanges();
+        //                return RedirectToAction("Index");
+        //            }
+        //    }
+        //    var list = db.Categories.ToList();
+        //    ViewBag.CategoryId = new SelectList(list, "Id", "Name");
+        //    return View(product);
+        //}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product, HttpPostedFileBase file)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product)
         {
             if (ModelState.IsValid)
             {
-
-                    if(file == null)
-                    {
-                        ViewBag.Thongbao = "Vui lòng chọn ảnh cho sản phẩm";
-                        return View();
-                    }
-                    else
-                    {
-                        var filename = Path.GetFileName(file.FileName);
-                        var path = Path.Combine(Server.MapPath("~/UploadFile"), filename);
-                        product.Image = filename;
-                    }
                 db.Products.Add(product);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", product.CategoryId);
             return View(product);
         }
 
+ 
         // GET: Admin/Products/Edit/5
         public ActionResult Edit(int? id)
         {

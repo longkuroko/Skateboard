@@ -1,74 +1,105 @@
-﻿@model SkateBoard.Models.Cart
+﻿@model SkateBoard.ViewModel.CheckoutViewModel
 
 @{
     ViewBag.Title = "Checkout";
     Layout = "/Views/Shared/_LayoutNew.cshtml";
 }
-<h2 style="text-align:center">THÔNG TIN HÀNG HÓA</h2>
-    <div class="container">
+@using (Html.BeginForm())
+{
+
+   <div class="container">
+        <div class="py-5 text-center">
+            <h2>Checkout form</h2>
+        </div>
+
+        @{ var cartSession = Session["Cart"] as SkateBoard.Models.Cart; }
         <div class="row">
-            <div class="col-8">
-                <table class="table" style="">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Product Name</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Qty</th>
-                            <th>Total</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model.CartItems)
-                        {
-                            double total = Convert.ToDouble(item.Product.Price * item.qty);
-                            <tr>
-                                <td><input id="btnThem" type="checkbox" data-view-id="" data-view-index="ca4d46e4-dbf3-11eb-9fc9-aec3650e6157"></td>
-                                <td>@Html.DisplayFor(model => item.Product.Name)</td>
-                                <td><img src="/@item.Product.Image" /></td>
-                                <td>@Html.DisplayFor(model => item.Product.Price)</td>
-                                <td>
-                                    @using (Html.BeginForm("UpdateQuantity", "ShopingCart"))
-                                    {
-                                        <input type="hidden" value="@item.Product.Id" name="ID_Product" />
-                                        <input aria-label="quantity" class="input-qty" max="10" min="1" name="Quantity" type="number" value="@item.qty">
-                                        <input type="submit" value="Update" />
-                                    }
+        @if (cartSession != null)
+        {
 
-                                </td>
-                                <td>@total</td>
-                                <td><a href="/ShopingCart/RemoveCart/@item.Product.Id"><i class="fas fa-trash-alt"></i></a></td>
-                            </tr>
-
-                        }
-                    </tbody>
-                </table>
+            <div class="col-md-4 order-md-2 mb-4">
+                <h4 class="d-flex justify-content-between align-items-center mb-3">
+                    <span class="text-muted">Your cart</span>
+                    <span class="badge badge-secondary badge-pill">@cartSession.TotalQuantity()</span>
+                </h4>
+             
+                <ul class="list-group mb-3">
+                    @foreach (var item in cartSession.CartItems)
+                    {
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
+                            <div>
+                                <h6 class="my-0">@item.Product.Name</h6>
+                                <small class="text-muted">@item.qty</small>
+                            </div>
+                            <span class="text-muted">@item.Product.Price</span>
+                        </li>
+                    }
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>Tổng Tiền(VNĐ)</span>
+                        <strong>@cartSession.TotalMoney()</strong>
+                    </li>
+                </ul>
             </div>
+        }
+        @{ var customer = Session["Customer"] as SkateBoard.Models.Customer;}
 
-            <div class="col-4">
 
-                @{var customer = Session["Customer"] as SkateBoard.Models.Customer;}
-
-                @using (Html.BeginForm())
-                {
-
-                    <div class="styles__StyledShippingAddress-sc-1sjj51k-0 dBdDDu">
-                        <p class="heading"><span class="text">Giao tới</span><span data-view-id="cart_shipping_location.change" class="link">Thay đổi</span></p><p class="title"><b class="name">@customer.fullname</b><b class="phone">@customer.Phone</b></p><p class="address">@customer.Address</p>
+        <div class="col-md-8 order-md-1">
+            @if (customer != null)
+            {
+                <h4 class="mb-3">Billing address</h4>
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="firstName">FullName</label>
+                            <input type="text" class="form-control" id="firstName" placeholder="" value="@customer.fullname" required>
+                            <div class="invalid-feedback">
+                                Valid first name is required.
+                            </div>
+                        </div>
                     </div>
-                    <div class="prices">
-                        <ul class="prices__items"><li class="prices__item"><span class="prices__text">Tạm tính</span><span class="prices__value">@Model.TotalMoney()</span></li><li class="prices__item"><span class="prices__text">Giảm giá</span><span class="prices__value">0</span></li></ul><p class="prices__total"><span class="prices__text">Tổng cộng</span><span class="prices__value prices__value--final">@Model.TotalMoney()<i>(Đã bao gồm VAT nếu có)</i></span></p>
+                    <div class="mb-3">
+                        <label for="username">Username</label>
+                        <div class="input-group">
+                            @*<div class="input-group-prepend">
+                                <span class="input-group-text">@</span>
+                            </div>*@
+                            <input type="text" class="form-control" id="username" placeholder="Username" value="@customer.Username" required>
+                            <div class="invalid-feedback" style="width: 100%;">
+                                Your username is required.
+                            </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <a asp-controller="ShopingCart" asp-action="CheckOut">Xác nhận đặt hàng</a>
-                    </button>
-                }
 
-            </div>
-            <div>
+                    <div class="mb-3">
+                        <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                        <input type="email" class="form-control" id="email" placeholder="you@example.com" value="@customer.Email">
+                        <div class="invalid-feedback">
+                            Please enter a valid email address for shipping updates.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="address">Address</label>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required value="@customer.Address">
+                        <div class="invalid-feedback">
+                            Please enter your shipping address.
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    @*<div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="same-address">
+                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                    </div>
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="save-info">
+                        <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                    </div>*@
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Thanh Toán</button>
+                </form>
+            }
             </div>
         </div>
-    </div>
+</div>
 
-
-
+}

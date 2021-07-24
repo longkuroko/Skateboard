@@ -1,12 +1,12 @@
-﻿@model SkateBoard.Models.Product
+﻿@model SkateBoard.ViewModel.ProductViewModel
 
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
-    var relatedProducts = (List<SkateBoard.Models.Product>)ViewBag.RelatedProducts;
+
 }
 
-<link rel="stylesheet" href="~/Asset/chitietsanpham.css"/>
+<link rel="stylesheet" href="~/Asset/chitietsanpham.css" />
 
 <style>
     body {
@@ -20,13 +20,13 @@
 
     /*Color codes
 
-Greyish white: #f2f2f2;
-Light blue: #baf4f4;
-Blue: #07d1db;
-Yellow: #ffb031;
-Dark blue: #034873;
+    Greyish white: #f2f2f2;
+    Light blue: #baf4f4;
+    Blue: #07d1db;
+    Yellow: #ffb031;
+    Dark blue: #034873;
 
-*/
+    */
 
     .margin_tb_60 {
         margin: 60px 0px;
@@ -40,9 +40,9 @@ Dark blue: #034873;
         margin-left: 90px;
     }
 
-   /* .margin_top_60 {
-        margin-top: 220px;
-    }*/
+    /* .margin_top_60 {
+            margin-top: 220px;
+        }*/
 
     .margin_bottom_60 {
         margin-bottom: 60px;
@@ -302,31 +302,33 @@ Dark blue: #034873;
         color: white;
         text-decoration: none;
     }
-  
-    .navbar {
 
+    .navbar {
         background-color: #000000 !important;
     }
+
     .background {
         transform: translateY(-14px);
-    
     }
+
     .store {
         margin-top: -52px !important;
-      
     }
-    .margin_top_60{
-        padding-top:30px;
+
+    .margin_top_60 {
+        padding-top: 30px;
     }
+
     .thumb_img > img {
         border: 1px solid darkgray;
     }
-    .big_img{
+
+    .big_img {
         border: 1px solid;
     }
 </style>
 <body>
- 
+
     <div class="container">
         <div class="margin_top_60">
             <a href="/Home/Index" class="link_return">Trang chủ</a> &gt; <a href="#" class="link_return">chi tiết sản phẩm</a>
@@ -336,16 +338,16 @@ Dark blue: #034873;
         <div class="row margin_tb_60">
             <div class="col-12 col-sm-3 col-md-4 col-lg-5">
                 <div class="big_img">
-                    <img src="/@Html.DisplayFor(m => m.Image)">
+                    <img src="/@Html.DisplayFor(model=>model.Product.Image)">
                 </div>
                 <div class="thumb_img margin_top_60">
-                    <img src="/@Html.DisplayFor(m => m.Image)">
-                    <img src="/@Html.DisplayFor(m => m.Image)">
-                    <img src="/@Html.DisplayFor(m => m.Image)">
+                    <img src="/@Html.DisplayFor(model=>model.Product.Image)">
+                    <img src="/@Html.DisplayFor(model=>model.Product.Image)">
+                    <img src="/@Html.DisplayFor(model=>model.Product.Image)">
                 </div>
             </div>
             <div class="col-12 col-sm-9 col-md-8 col-lg-7 pl-5">
-                <h2><strong>@Model.Name</strong></h2>
+                <h2><strong>@Model.Product.Name</strong></h2>
                 <div class="star_icon">
                     <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
@@ -353,13 +355,13 @@ Dark blue: #034873;
                     <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
                     <a href="#" class="yellow_star"><i class="fas fa-star" aria-hidden="true"></i></a>
                 </div>
-                <h3 class="text-dark margin_top_30"><strong>@Html.DisplayFor(model => model.Price)</strong></h3>
+                <h3 class="text-dark margin_top_30"><strong>@Html.DisplayFor(model => model.Product.Price)</strong></h3>
                 <hr class="mt-4">
-                <p class="blue_text mt-4"><strong>@Html.DisplayFor(model => model.Category.Name)</strong></p>
+                <p class="blue_text mt-4"><strong>@Html.DisplayFor(model => model.Product.Category.Name)</strong></p>
 
                 <p class="mt-4">
                     <strong><span class="blue_text">THÔNG TIN SẢN PHẨM</span></strong>
-                    <br>@Html.DisplayFor(model => model.Details)
+                    <br>@Html.DisplayFor(model => model.Product.Details)
                 </p>
                 <p class="blue_text mt-4"><strong>Số lượng:</strong></p>
                 <div class="float-left">
@@ -373,39 +375,67 @@ Dark blue: #034873;
         <!--End row-->
     </div>
     <div class="container">
+
+        <div class="carousel-item">
+            <div class="row">
+                @*@foreach (var item in Model.RelateProducts)
+                    {
+                        <div class="col col-lg-3">
+                            <a href="/Product/Details/@item.Id"><img src="~/@item.Image" class="collection_img">@item.Image</a>
+                        </div>
+                    }*@
+                <div class="col-4">
+                    <img alt=" hinh1" />
+                </div>
+                <div class="col-4">
+                    <img alt=" hinh1" />
+                </div>
+                <div class="col-4">
+                    <img alt=" hinh1" />
+                </div>
+            </div>
+            <!--End row-->
+            <!--End container-->
+        </div>
+        <!--End row-->
+    </div>
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+
         <div class="row margin_tb_60">
             <div class="col-lg-12 text-center">
                 <h3><strong>CÓ THỂ BẠN QUAN TÂM</strong></h3>
             </div>
             <div><a href="/Product/">Xem tất cả</a></div>
         </div>
-        <!--End row-->
-    </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row">
-                    @foreach (var item in relatedProducts)
-                    {                    
-                        <div class="col-lg-3">
-                            <a href="/Product/Details/@item.Id"><img src="~/@item.Image" class="collection_img">@item.Name</a>
-                        </div>
-                    }
+        <div class="carousel-inner ">
+            <div>
+                <div class="carousel-item active">
+                    <div class="row">
+                        @foreach (var item in Model.RelateProducts)
+                        {
+                            <div class="col-lg-3">
+                                <a href="/Product/Details/@item.Id">
+                                    <img src="~/@item.Image" class="collection_im">@item.Name
+                                </a>
+                            </div>
+                        }
+                    </div>
                 </div>
-                <!--End row-->
-            </div>
-            <!--End container-->
-        </div>
-        <!--End Carousel item-->
-        <!--End Carousel item-->
-        <!--Prev next controller-->
-        <a class="carousel-control-prev" href="#new_collection" data-slide="prev">
-            <span class="fas fa-chevron-left"></span>
-        </a>
+                <div class="carousel-item">
 
-        <a class="carousel-control-next" href="#new_collection" data-slide="next">
-            <span class="fas fa-chevron-right"></span>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
         </a>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

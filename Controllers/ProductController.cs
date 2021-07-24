@@ -37,14 +37,18 @@ namespace SkateBoard.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Product product = db.Products.Find(id);
-            ViewBag.RelatedProducts = new List<Product>(RelatedProducts(productid));
-            //var relatedProduct = new List<Product>(RelatedProducts(productid));
 
+            var relatedProduct = db.Products.Where(x=>x.CategoryId == product.CategoryId).Take(2).ToList();
             if (product == null)
             {
                 return HttpNotFound();
             }
-            return View(product);
+            ProductViewModel viewModel = new ProductViewModel
+            {
+                Product = product,
+                RelateProducts = relatedProduct
+            };
+            return View(viewModel);
         }
 
         protected override void Dispose(bool disposing)
@@ -54,29 +58,6 @@ namespace SkateBoard.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
-        }
-
-        //public ActionResult RelatedProduct(int id)
-        //{
-        //    var product = db.Products.Include(s => s.Category).FirstOrDefault(p => p.Id == id);
-
-        //    ProductViewModel productView = new ProductViewModel
-        //    {
-
-        //        Product = product,
-        //        RelateProducts = db.Products
-        //        .Where(f => f.CategoryId == product.CategoryId)
-        //        .Take(3)
-        //        .OrderBy(s => s.Name),
-        //        Categories = db.Categories.Take(15).OrderBy(s => s.Name)
-        //    };
-        //    return View(productView);
-        //}
-
-        public List<Product> RelatedProducts(int id)
-        {
-            var product = db.Products.Find(id);
-            return db.Products.Where(x => x.Id != id && x.CategoryId == product.CategoryId).Take(4).ToList();
         }
 
         public ActionResult Category()

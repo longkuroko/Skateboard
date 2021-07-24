@@ -326,12 +326,23 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107171423530_InitialModel.cs" />
-    <Compile Include="Migrations\202107171423530_InitialModel.Designer.cs">
-      <DependentUpon>202107171423530_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202107240859454_InitialModel.cs" />
+    <Compile Include="Migrations\202107240859454_InitialModel.Designer.cs">
+      <DependentUpon>202107240859454_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107240902020_AddTableAdmin.cs" />
+    <Compile Include="Migrations\202107240902020_AddTableAdmin.Designer.cs">
+      <DependentUpon>202107240902020_AddTableAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107240939055_DeleteIdentity.cs" />
+    <Compile Include="Migrations\202107240939055_DeleteIdentity.Designer.cs">
+      <DependentUpon>202107240939055_DeleteIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107240945360_deleteTableAdmin.cs" />
+    <Compile Include="Migrations\202107240945360_deleteTableAdmin.Designer.cs">
+      <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
     <Compile Include="Data\ApplicationDbContext.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -513,6 +524,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="UploadFile\" />
+    <Folder Include="Views\Admin\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
@@ -529,8 +541,17 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107171423530_InitialModel.resx">
-      <DependentUpon>202107171423530_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107240859454_InitialModel.resx">
+      <DependentUpon>202107240859454_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107240902020_AddTableAdmin.resx">
+      <DependentUpon>202107240902020_AddTableAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107240939055_DeleteIdentity.resx">
+      <DependentUpon>202107240939055_DeleteIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107240945360_deleteTableAdmin.resx">
+      <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace SkateBoard.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class deleteTableAdmin : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(deleteTableAdmin));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107171423530_InitialModel"; }
+            get { return "202107240945360_deleteTableAdmin"; }
         }
         
         string IMigrationMetadata.Source

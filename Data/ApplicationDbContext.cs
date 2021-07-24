@@ -12,7 +12,6 @@ namespace SkateBoard.Models
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Customer> Customers { get; set; }
-       // public DbSet<Admin> Admins{ get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

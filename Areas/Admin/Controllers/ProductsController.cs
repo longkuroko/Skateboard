@@ -11,6 +11,7 @@ using SkateBoard.Models;
 
 namespace SkateBoard.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();

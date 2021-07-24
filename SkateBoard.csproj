@@ -350,7 +350,7 @@
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Asset\login1.js" />
+    <Content Include="Asset\chatbox.css" />
     <Content Include="Asset\login1.css" />
     <Content Include="Asset\giohang.css" />
     <Content Include="Asset\chitietsanpham.css" />
@@ -435,6 +435,7 @@
     <None Include="packages.config" />
     <None Include="packages.config" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\chatbox.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />

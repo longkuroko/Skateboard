@@ -4,12 +4,12 @@
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
 
-
+<
+<link href="~/Asset/chatbox.css" rel="stylesheet" />
 <style>
-    .banner{
-        padding-top:75px !important;
+    .banner {
+        padding-top: 75px !important;
     }
-
 </style>
 <div class="store">
     <div class="background " id="background1">
@@ -345,3 +345,119 @@
         </div>
     </div>
 </div>
+@*chat box*@
+
+<div class="fabs">
+    <div class="chat" id="fb-customer-chat">
+        
+        <div class="chat_body chat_login">
+            <a id="chat_first_screen" class="fab"><i class="zmdi zmdi-arrow-right"></i></a>
+            <p>We make it simple and seamless for businesses and people to talk to each other. Ask us anything</p>
+        </div>
+        
+     
+        
+        
+    </div>
+    <a id="prime" class="fab"><i class="prime zmdi zmdi-comment-outline"></i></a>
+</div>
+
+@section scripts {
+    <script type="text/javascript">
+        hideChat(0);
+
+        $('#prime').click(function () {
+            toggleFab();
+        });
+
+
+        //Toggle chat and links
+        function toggleFab() {
+            $('.prime').toggleClass('zmdi-comment-outline');
+            $('.prime').toggleClass('zmdi-close');
+            $('.prime').toggleClass('is-active');
+            $('.prime').toggleClass('is-visible');
+            $('#prime').toggleClass('is-float');
+            $('.chat').toggleClass('is-visible');
+            $('.fab').toggleClass('is-visible');
+
+        }
+
+        $('#chat_first_screen').click(function (e) {
+            hideChat(1);
+        });
+
+        $('#chat_second_screen').click(function (e) {
+            hideChat(2);
+        });
+
+        $('#chat_third_screen').click(function (e) {
+            hideChat(3);
+        });
+
+        $('#chat_fourth_screen').click(function (e) {
+            hideChat(4);
+        });
+
+        $('#chat_fullscreen_loader').click(function (e) {
+            $('.fullscreen').toggleClass('zmdi-window-maximize');
+            $('.fullscreen').toggleClass('zmdi-window-restore');
+            $('.chat').toggleClass('chat_fullscreen');
+            $('.fab').toggleClass('is-hide');
+            $('.header_img').toggleClass('change_img');
+            $('.img_container').toggleClass('change_img');
+            $('.chat_header').toggleClass('chat_header2');
+            $('.fab_field').toggleClass('fab_field2');
+            $('.chat_converse').toggleClass('chat_converse2');
+            //$('#chat_converse').css('display', 'none');
+            // $('#chat_body').css('display', 'none');
+            // $('#chat_form').css('display', 'none');
+            // $('.chat_login').css('display', 'none');
+            // $('#chat_fullscreen').css('display', 'block');
+        });
+
+        function hideChat(hide) {
+            switch (hide) {
+                case 0:
+                    $('#chat_converse').css('display', 'none');
+                    $('#chat_body').css('display', 'none');
+                    $('#chat_form').css('display', 'none');
+                    $('.chat_login').css('display', 'block');
+                    $('.chat_fullscreen_loader').css('display', 'none');
+                    $('#chat_fullscreen').css('display', 'none');
+                    break;
+                case 1:
+                    $('#chat_converse').css('display', 'block');
+                    $('#chat_body').css('display', 'none');
+                    $('#chat_form').css('display', 'none');
+                    $('.chat_login').css('display', 'none');
+                    $('.chat_fullscreen_loader').css('display', 'block');
+                    break;
+                case 2:
+                    $('#chat_converse').css('display', 'none');
+                    $('#chat_body').css('display', 'block');
+                    $('#chat_form').css('display', 'none');
+                    $('.chat_login').css('display', 'none');
+                    $('.chat_fullscreen_loader').css('display', 'block');
+                    break;
+                case 3:
+                    $('#chat_converse').css('display', 'none');
+                    $('#chat_body').css('display', 'none');
+                    $('#chat_form').css('display', 'block');
+                    $('.chat_login').css('display', 'none');
+                    $('.chat_fullscreen_loader').css('display', 'block');
+                    break;
+                case 4:
+                    $('#chat_converse').css('display', 'none');
+                    $('#chat_body').css('display', 'none');
+                    $('#chat_form').css('display', 'none');
+                    $('.chat_login').css('display', 'none');
+                    $('.chat_fullscreen_loader').css('display', 'block');
+                    $('#chat_fullscreen').css('display', 'block');
+                    break;
+            }
+        }
+
+
+    </script>
+}

@@ -34,7 +34,7 @@ namespace SkateBoard.Controllers
             if(login == null)
             {
                ModelState.AddModelError("","Tên đăng nhập hoặc mật khẩu không đúng");
-                return View("Login", "Customer");
+               return View("Login", "Customer");
 
             }
             else

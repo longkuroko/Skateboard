@@ -16,6 +16,8 @@ namespace SkateBoard.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
+       
+
         // GET: Admin/Products
         public ActionResult Index()
         {
@@ -85,20 +87,28 @@ namespace SkateBoard.Areas.Admin.Controllers
         //}
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product)
+        public ActionResult Create([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product, HttpPostedFileBase fileupload)
         {
+
+            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name");
+            if(fileupload != null)
+            {
+                string filename = Path.GetFileName(fileupload.FileName);
+                string path = Server.MapPath("~/UploadFile/" + filename);
+                fileupload.SaveAs(path);
+                product.Image = "UploadFile/" + filename;
+
+            }  
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+    
+                    db.Products.Add(product);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
             }
-
-            ViewBag.CategoryId = new SelectList(db.Categories, "Id", "Name", product.CategoryId);
+ 
             return View(product);
         }
-
- 
         // GET: Admin/Products/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -120,10 +130,19 @@ namespace SkateBoard.Areas.Admin.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product)
+        public ActionResult Edit([Bind(Include = "Id,Name,Price,Image,Details,CategoryId")] Product product, HttpPostedFileBase fileupload)
         {
+            if (fileupload != null)
+            {
+                string filename = Path.GetFileName(fileupload.FileName);
+                string path = Server.MapPath("~/UploadFile/" + filename);
+                fileupload.SaveAs(path);
+                product.Image = "UploadFile/" + filename;
+
+            }
             if (ModelState.IsValid)
             {
+            
                 db.Entry(product).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

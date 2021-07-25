@@ -14,7 +14,6 @@ namespace SkateBoard.Models
         public string Name { get; set; }
         [Display(Name = "Gía")]
         public decimal Price { get; set; }
-        [DataType(DataType.Upload)]
         [Display(Name = "Ảnh sản phẩm")]
         public string Image { get; set; }
         [Display(Name = "Chi tiết sản phẩm")]
@@ -24,5 +23,9 @@ namespace SkateBoard.Models
         [Required]
         public int CategoryId { get; set; }      
      
+        public Product()
+        {
+
+        }
     }
 }

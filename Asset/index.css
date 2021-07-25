@@ -7,29 +7,31 @@
 
 body {
     overflow-x: hidden;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.logo {
-  text-align: center;
-}
 
 
 .logo1 {
-  text-align: center;
-  top: -20%;
-  position: absolute;
-  left: 30%;
+    text-align: center;
+    top: -14% !important;
+    position: absolute;
+    left: 33% !important;
 }
 
 .navbar {
-  width: 100%;
-  position: absolute;
-  top: 20%;
-  background-color: #000000;
+    width: 100%;
+    position: absolute;
+    margin: 0px auto !important;
+    background-color: #000000;
 }
 
-.navbar-nav {
-  margin: 0px auto;
+#navbar-nav {
+    margin: 0px auto !important;
+    top: 22%;
+    font-size:24px;
 }
 
 .navbar-nav li {
@@ -82,10 +84,10 @@ body {
 }
 
 .banner {
-  background-color: #ffffff;
-  width: 90%;
-  padding-top: 75px !important;
-  margin: 0px auto;
+    background-color: #ffffff;
+    width: 90%;
+    padding-top: 30px !important;
+    margin: 0px auto;
 }
 
 .content {
@@ -212,9 +214,7 @@ a:hover {
   right: 38%;
   font-weight: 500;
 }
-.navbar-nav {
-  margin-right: 275px !important;
-}
+
 .chitiet {
   position: absolute;
   left: 60%;
@@ -265,102 +265,10 @@ h3 {
 .price-box {
   padding-bottom: 31px;
 }
-/* .navbar-nav {
-            margin-left: 420px;
-        } */
+
 
 .btn i {
   color: #ffff;
-}
-
-.navbar-nav {
-  margin-right: 190px;
-}
-
-@media only screen and (max-width: 576px) {
-  .logo1 {
-    text-align: center;
-    top: -17%;
-    position: absolute;
-    left: -10%;
-  }
-  .navbar {
-    width: 110%;
-    position: absolute;
-    top: 14%;
-    background-color: #000000;
-    opacity: 0.5;
-  }
-  .logo1 img {
-    max-height: 270px;
-  }
-  .navbar-toggler {
-    background-color: seashell;
-    border: 1px solid seashell;
-    width: 38px;
-    padding: 1px;
-  }
-  .navbar .collapse {
-    height: 54%;
-  }
-  .stor_1 {
-    padding-left: 0px;
-  }
-  .stor_2 {
-    padding-left: 0px;
-  }
-  .stor_3 {
-    padding-left: 0px;
-    display: none;
-  }
-  .title {
-    text-align: center;
-  }
-  .title h4 {
-    font-size: 15px;
-  }
-  .carousel-control-prev {
-    display: none;
-  }
-  .carousel-control-next {
-    display: none;
-  }
-  .banner {
-    display: none;
-  }
-  .footer-widget a img {
-    max-width: 100%;
-    position: relative;
-    right: 27%;
-    margin-top: -48px;
-    margin-bottom: 60px;
-  }
-  .list-menu li p {
-    position: absolute;
-    width: 90%;
-    top: 36%;
-    right: 2%;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 30px;
-  }
-  .footer-widget ul {
-    padding-left: 11px;
-    padding-top: 15px;
-    line-height: 34px;
-  }
-  .background img {
-    width: 110%;
-  }
-  .logo_banner {
-    width: 110%;
-  }
-  .site-footer {
-    width: 110%;
-  }
-  .left {
-    text-align: center;
-  }
 }
 
 .timkiem {
@@ -370,4 +278,102 @@ h3 {
   position: absolute !important;
   left: 90%;
   background: #000;
+}
+
+
+.timkiem1 {
+    left: -58px !important;
+    bottom: -42px !important;
+}
+
+.timkiem {
+    position: absolute !important;
+}
+
+#timkiem2 {
+    transform: translate(12px, 18px);
+}
+
+.dropdown {
+    transform: translate(-37px, -21px);
+}
+
+.navbar {
+    background-color: #000 !important;
+}
+
+.btn-secondary {
+    background-color: transparent !important;
+}
+
+
+
+.navbar-brand img {
+    width: 180px;
+    margin-left: 90px;
+}
+
+.navbar {
+    background-color: #034873;
+}
+
+.margin_nav {
+    margin: 90px 30px;
+}
+
+.margin_nav_icon {
+    margin: 90px 90px 90px 30px;
+}
+
+.font_20 {
+    font-size: 20px;
+    line-height: 30px;
+}
+
+a.nav-link:link, a.nav-link:visited {
+    color: white;
+    padding: 0;
+}
+
+a.nav-link:hover {
+    color: #ffb031;
+}
+
+a.dropdown-item:link, a.dropdown-item:visited {
+    padding: 15px 15px 10px 15px;
+    color: #034873;
+    font-size: 20px;
+}
+
+a.dropdown-item:hover {
+    background-color: #ffb031;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+
+.page_shop {
+    margin-left: 434%;
+    margin-bottom: -65px;
+    margin-top: 13px;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination >li{
+    border: 1px solid black;
+    padding: 2px 10px;
+}
+.pagination li > a {
+    color: #000000;
+}
+
+li.active a{
+    color:red !important;
+}
+.pagination > li :hover {
+    color: red;
 }

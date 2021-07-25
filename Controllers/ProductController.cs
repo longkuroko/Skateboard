@@ -38,7 +38,7 @@ namespace SkateBoard.Controllers
             }
             Product product = db.Products.Find(id);
 
-            var relatedProduct = db.Products.Where(x=>x.CategoryId == product.CategoryId).Take(2).ToList();
+            var relatedProduct = db.Products.Where(x=>x.CategoryId == product.CategoryId).Take(4).ToList();
             if (product == null)
             {
                 return HttpNotFound();

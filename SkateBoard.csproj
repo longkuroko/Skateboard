@@ -326,25 +326,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107240859454_InitialModel.cs" />
-    <Compile Include="Migrations\202107240859454_InitialModel.Designer.cs">
-      <DependentUpon>202107240859454_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107240902020_AddTableAdmin.cs" />
-    <Compile Include="Migrations\202107240902020_AddTableAdmin.Designer.cs">
-      <DependentUpon>202107240902020_AddTableAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107240939055_DeleteIdentity.cs" />
-    <Compile Include="Migrations\202107240939055_DeleteIdentity.Designer.cs">
-      <DependentUpon>202107240939055_DeleteIdentity.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107240945360_deleteTableAdmin.cs" />
-    <Compile Include="Migrations\202107240945360_deleteTableAdmin.Designer.cs">
-      <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107241014180_UpdateCustomer.cs" />
-    <Compile Include="Migrations\202107241014180_UpdateCustomer.Designer.cs">
-      <DependentUpon>202107241014180_UpdateCustomer.cs</DependentUpon>
+    <Compile Include="Migrations\202107241801573_InitialModel.cs" />
+    <Compile Include="Migrations\202107241801573_InitialModel.Designer.cs">
+      <DependentUpon>202107241801573_InitialModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModel\AccountViewModels.cs" />
@@ -369,9 +353,10 @@
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Asset\Detail_product.css" />
+    <Content Include="Asset\Sign_up.css" />
+    <Content Include="Asset\login_admin.css" />
     <Content Include="Asset\Chitietkhachhang.css" />
-    <Content Include="Asset\login1.js" />
-    <Content Include="Asset\login1.css" />
     <Content Include="Asset\giohang.css" />
     <Content Include="Asset\chitietsanpham.css" />
     <Content Include="Asset\index.css" />
@@ -544,20 +529,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107240859454_InitialModel.resx">
-      <DependentUpon>202107240859454_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107240902020_AddTableAdmin.resx">
-      <DependentUpon>202107240902020_AddTableAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107240939055_DeleteIdentity.resx">
-      <DependentUpon>202107240939055_DeleteIdentity.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107240945360_deleteTableAdmin.resx">
-      <DependentUpon>202107240945360_deleteTableAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107241014180_UpdateCustomer.resx">
-      <DependentUpon>202107241014180_UpdateCustomer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107241801573_InitialModel.resx">
+      <DependentUpon>202107241801573_InitialModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

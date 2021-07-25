@@ -102,8 +102,6 @@ namespace SkateBoard.Migrations
                 c => new
                     {
                         Id = c.String(nullable: false, maxLength: 128),
-                        Name = c.String(nullable: false, maxLength: 255),
-                        Address = c.String(nullable: false),
                         Email = c.String(maxLength: 256),
                         EmailConfirmed = c.Boolean(nullable: false),
                         PasswordHash = c.String(),

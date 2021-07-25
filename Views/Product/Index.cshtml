@@ -4,11 +4,12 @@
 @model PagedList.PagedList<Product>
 @{
     ViewBag.Title = "Index";
+   
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
-<link rel="stylesheet" href="~/Asset/shop.css" />
 
 
+<link href="~/Asset/shop.css" rel="stylesheet" type="text/css" />
 
 <section id="store" class="store py-5">
 
@@ -16,18 +17,7 @@
 
 
     <style>
-        .page {
-            margin-left: 434%;
-            margin-bottom: -65px;
-            margin-top: 13px;
-        }
-        .pagination >li {
-            border: 1px solid black;
-            padding: 2px 10px;
-        }
-        .pagination li > a {
-            color: #ff0808;
-        }
+ 
     </style>
     <div class="container">
         <div class="row">
@@ -85,15 +75,20 @@
                             </div>
                         </div>
                     }
-            <div class="row text-center">
+            @*<div class="row text-center page_shop">
                 <div class="col-sm-12 page">
                     @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
                 </div>
+            </div>*@
+
+        </div>
+        <div class="text-center page_shop">
+            <div class="page">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
             </div>
         </div>
-
     </div>
 </section>
-<br />
+
 
 

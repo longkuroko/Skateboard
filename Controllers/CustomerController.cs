@@ -117,18 +117,73 @@ namespace SkateBoard.Controllers
             }
             return View(customer);
         }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Details([Bind(Include = "Id,Username,Password,fullname,Address,Email,Phone")] Customer customer)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
+        //        db.SaveChanges();
+        //        return RedirectToAction("Details");
+        //    }
+        //    return View(customer);
+        //}
+
+
+        //Thay doi mat khau
+        //[HttpPost]
+        //public ActionResult ChangePwd (int id, string newPwd)
+        //{
+        //    var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+        //    if(customer != null)
+        //    {
+        //        customer.Password = newPwd;
+        //        db.SaveChanges();
+        //        ViewBag.ThongBao = "Thay đổi mật khẩu thành công";
+        //        return RedirectToAction("Details");
+        //    }
+        //    return View(customer);
+        //}
+
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Details([Bind(Include = "Id,Username,Password,fullname,Address,Email,Phone")] Customer customer)
+        public JsonResult UpdateInfo(int id, string fullName,  string address, string phone, string email)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(customer).State = System.Data.Entity.EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Details");
-            }
-            return View(customer);
+
+            var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+            customer.fullname = fullName;
+        
+            customer.Address = address;
+            customer.Phone = phone;
+            customer.Email = email;
+
+            UpdateModel(customer);
+            db.SaveChanges();
+
+            Session["Customer"] = customer;
+
+            return Json("Success", JsonRequestBehavior.AllowGet);
         }
+
+        [HttpPost]
+        public JsonResult ChangePwd(long id, string newPwd)
+        {
+            var customer = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+            if (customer != null)
+            {
+                customer.Password = newPwd;
+                UpdateModel(customer);
+                db.SaveChanges();
+                Session["Customer"] = customer;
+                return Json("Success", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("CannotFindCustomer", JsonRequestBehavior.AllowGet);
+            }
+        }
+
+
 
     }
 

@@ -174,51 +174,51 @@
                             //muốn chạy đc thay đổi thong tin thì bỏ cmt đoạn này và comment đoạn ở dưới lại
 
                             @*<div class="form-horizontal">
-                <h4>Customer</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                @Html.HiddenFor(model => model.Id)
-                @Html.HiddenFor(model => model.Username)
-                @Html.HiddenFor(model => model.Password)
+                                    <h4>Customer</h4>
+                                    <hr />
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    @Html.HiddenFor(model => model.Id)
+                                    @Html.HiddenFor(model => model.Username)
+                                    @Html.HiddenFor(model => model.Password)
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.fullname, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.fullname, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.fullname, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-                    <div class="col-md-10">
-                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                    </div>
-                </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
 
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Save" class="btn btn-default" />
-                    </div>
-                </div>
-            </div>*@
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Save" class="btn btn-default" />
+                                        </div>
+                                    </div>
+                                </div>*@
                             <div class="form-control">
                                 @Html.HiddenFor(m => m.Id)
                                 @Html.HiddenFor(m => m.Username)
@@ -248,7 +248,7 @@
                                         <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
                                     </div>
                                 </div>
-                                <button type="submit" class="btn2 btn mt-3" data-toggle="modal">
+                                <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#exampleModal">
                                     THAY ĐỔI THÔNG TIN
                                 </button>
                                 <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#PASSWORD">
@@ -256,101 +256,58 @@
                                 </button>
                             </div>
                         }
-                        @*@using (Html.BeginForm())
-        {
-            var userLogin = Session["Customer"] as SkateBoard.Models.Customer;
-            if (userLogin != null)
-            {
 
-            <form>
-                <div class="form-control">
-                    @Html.HiddenFor(m => m.Id)
-                    @Html.HiddenFor(m => m.Username)
-                    @Html.HiddenFor(m => m.Password)
-                    <div>
-                        <label for="@Html.DisplayFor(model => model.fullname)" class="input-label">Họ và tên</label>
-                        <div>
-                            <input id="Id" name="Id" type="text" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
-                        </div>
-                    </div>
-                    <div style="transform: translateY(-34px);">
-                        <label for="@Html.DisplayFor(model => model.Phone)" class="input-label">Số Điện thoại </label>
-                        <div>
-                            <input type="text" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
-                        </div>
-                    </div>
 
-                    <div style="transform: translateY(-65px);">
-                        <label for="@Html.DisplayFor(model => model.Email)" class="input-label">Email</label>
-                        <div>
-                            <input type="text" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
-                        </div>
-                    </div>
-                    <div style="transform: translateY(-65px);">
-                        <label for="@Html.DisplayFor(model => model.Address)" class="input-label">Địa chỉ</label>
-                        <div>
-                            <input type="text" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
-                        </div>
-                    </div>
-                    <button type="submit" class="btn2 btn mt-3" data-toggle="modal">
-                        THAY ĐỔI THÔNG TIN
-                    </button>
-                    <button type="button" class="btn2 btn mt-3" data-toggle="modal" data-target="#PASSWORD">
-                        ĐỔI MẬT KHẨU
-                    </button>
-                </div>
-            </form>
-        }*@
+                        @*UPDATE THONG TIN CA NHANH*@
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form>
+                                        <div class="modal-body">
+                                            <div class="form-control form-control_popup">
+                                               
+                                                <div>
+                                                    <label class="input-label">Họ và tên</label>
+                                                    <div>
+                                                        <input type="text" id="txtCustomerName" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                                    </div>
+                                                </div>
+                                                <div style="transform: translateY(-34px);">
+                                                    <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
+                                                    <div>
+                                                        <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                                    </div>
+                                                </div>
 
-                        <!--UPDATE THONG TIN CA NHANH-->
-                        @*<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">CẬP NHẬT THÔNG TIN</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <form>
-                        <div class="modal-body">
-                            <div class="form-control form-control_popup">
-                                <input type="hidden" id="hfpatientId" />
-                                <div>
-                                    <label for="txtCustomerName" class="input-label">Họ và tên</label>
-                                    <div>
-                                        <input type="text" id="txtCustomerName" class="content1" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
-                                    </div>
-                                </div>
-                                <div style="transform: translateY(-34px);">
-                                    <label for="txtPatientNumber" class="input-label">Số Điện thoại </label>
-                                    <div>
-                                        <input type="text" id="txtPatientNumber" class="content1" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
-                                    </div>
-                                </div>
-
-                                <div style="transform: translateY(-65px);">
-                                    <label for="txtPatientEmail" class="input-label">Email</label>
-                                    <div>
-                                        <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
-                                    </div>
-                                </div>
-                                <div style="transform: translateY(-65px);">
-                                    <label for="txtAddress" class="input-label">Địa chỉ</label>
-                                    <div>
-                                        <input type="text" id="txtAddress" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
-                                    </div>
+                                                <div style="transform: translateY(-65px);">
+                                                    <label for="txtPatientEmail" class="input-label">Email</label>
+                                                    <div>
+                                                        <input type="text" id="txtPatientEmail" class="content1" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                                    </div>
+                                                </div>
+                                                <div style="transform: translateY(-65px);">
+                                                    <label for="txtAddress" class="input-label">Địa chỉ</label>
+                                                    <div>
+                                                        <input type="text" id="txtAddress" class="content1" placeholder="nhập địa chỉ" value="@Html.DisplayFor(model => model.Address)" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            @*<button type="button" class="btn btn-primary" onclick="UpdateInfo(this)" itemid="@Model.Id">Save changes</button>*@
+                                            <a href="#" class="btn btn-primary btn-save-info" onclick="UpdateInfo(this)" itemid="@Model.Id">Lưu</a>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary" onclick="UpdateCustomer();">Save changes</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>*@
                         <!--DOI MAT KHAU-->
                         <div class="modal fade" id="PASSWORD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog_pass" role="document">
@@ -366,27 +323,27 @@
                                             <div>
                                                 <label class="input-label">Mật khẩu cũ</label>
                                                 <div>
-                                                    <input type="password" class="content1 conten_password" placeholder="nhập họ và tên" value="@Html.DisplayFor(model => model.fullname)" />
+                                                    <input type="password" class="content1 conten_password" id="old_pwd" placeholder="nhập mật khẩu cũ"  />
                                                 </div>
                                             </div>
                                             <div style="transform: translateY(-34px);">
                                                 <label class="input-label">Mật khẩu mới</label>
                                                 <div>
-                                                    <input type="password" class="content1 conten_password" placeholder="nhập điện thoại" value="@Html.DisplayFor(model => model.Phone)" />
+                                                    <input type="password" class="content1 conten_password" id="new_pwd" placeholder="nhập mật khẩu mới"  />
                                                 </div>
                                             </div>
 
                                             <div style="transform: translateY(-65px);">
                                                 <label class="input-label">Confirm</label>
                                                 <div>
-                                                    <input type="password" class="content1 conten_password" placeholder="nhập email" value="@Html.DisplayFor(model => model.Email)" />
+                                                    <input type="password" class="content1 conten_password" id="new_pwd_confirm" placeholder="nhập lại mật khẩu" />
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Đóng</button>
-                                        <button type="button" class="btn btn-primary">Lưu</button>
+                                        <a href="#" class="btn btn-primary btn-save-info" onclick="SavePwd(this)" itemid="@Model.Id">Lưu</a>
                                     </div>
                                 </div>
                             </div>
@@ -398,3 +355,90 @@
         </div>
     </div>
 </div>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@*<script src="~/Assets/Client/petshop/bootstrap/js/jquery-3.3.1.slim.min.js"></script>*@
+<script src="~/Assets/Client/petshop/bootstrap/js/popper.min.js"></script>
+<script src="~/Assets/Client/petshop/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Assets/Client/petshop/js/script.js"></script>
+<script>
+     function UpdateInfo(item) {
+            var userId = $(item).attr('itemid');
+            var fullName = $('#txtCustomerName').val();
+            var address = $('#txtAddress').val();
+            var phone = $('#txtPatientNumber').val();
+            var email = $('#txtPatientEmail').val();
+          
+            var obj = {
+                Id: userId,
+                FullName: fullName,
+                Address: address,
+                Phone: phone,
+                Email: email
+            };
+            $.ajax({
+                url: '/Customer/UpdateInfo',
+                method: 'POST',
+                data: obj,
+                success: function (data) {
+                    if (data == "Success") {
+                        alert('Cập nhật thành công!');
+                        $('#exampleModal').modal('toggle');
+                        window.location.reload();
+                    }
+                },
+                error: function () {
+                    alert('Có lỗi xảy ra.');
+                }
+            });
+    };
+
+
+    //thay đổi mật khẩu
+     function SavePwd(item) {
+            var userId = $(item).attr('itemid');
+            var oldPwd = $('#old_pwd').val();
+            var newPwd = $('#new_pwd').val();
+            var newPwdConfirm = $('#new_pwd_confirm').val();
+            if (oldPwd == "" || oldPwd == undefined) {
+                alert('Bạn chưa nhập mật khẩu cũ.');
+            }
+            else {
+                if (newPwd == "" || newPwd == undefined) {
+                    alert('Bạn chưa nhập mật khẩu mới.');
+                }
+                else {
+                    if (newPwdConfirm == "" || newPwdConfirm == undefined) {
+                        alert('Bạn chưa nhập xác nhận mật khẩu.');
+                    }
+                    else {
+                        if (newPwd != newPwdConfirm) {
+                            alert('Mật khẩu không trùng khớp.');
+                        }
+                        else {
+                            var obj = {
+                                id: userId,
+                                newPwd: newPwd
+                            };
+                            $.ajax({
+                                url: '/Customer/ChangePwd',
+                                method: 'POST',
+                                data: obj,
+                                success: function (data) {
+                                    if (data == "Success") {
+                                        alert('Thay đỗi mật khẩu thành công.');
+                                        window.location.reload();
+                                    }
+                                    else {
+                                        alert(data);
+                                    }
+                                },
+                                error: function () {
+                                    alert('Có lỗi xảy ra.')
+                                }
+                            });
+                        }
+                    }
+                }
+            }
+        }
+</script>

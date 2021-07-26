@@ -336,6 +336,38 @@ a.copyright_link:hover {
     top: 22% !important;
 }
 
-.page_shop{
-    margin:10px auto !important;
+.page_shop {
+    margin: 10px auto !important;
+}
+
+.slider {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin: 0px auto !important;
+    position: relative;
+    width: 55% !important;
+    overflow: hidden;
+}
+.sp_lienquan{
+    justify-content:center;
+}
+
+
+.carousel-item{
+    max-width:100%;
+    padding-right:20px !important;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+    display:inline-block;
+    }
+
+.item_page{
+    margin:0;
+    padding:0 !important;
+}
+
+.item{
+    padding-right:20px;
 }

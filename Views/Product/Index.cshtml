@@ -4,20 +4,21 @@
 @model PagedList.PagedList<Product>
 @{
     ViewBag.Title = "Index";
-   
+
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
 }
 
 
 <link href="~/Asset/shop.css" rel="stylesheet" type="text/css" />
-
+<link href="~/Asset/giohang.css" rel="stylesheet" type="text/css" />
+<link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="~/Asset/chitietsanpham.css">
 <section id="store" class="store py-5">
 
 
 
 
     <style>
- 
     </style>
     <div class="container">
         <div class="row">
@@ -51,7 +52,7 @@
                     <div class="card ">
                         <div class="img-container card-item">
                             <a href="/Product/Details/@item.Id"><img src="/@item.Image" class="card-img-top store-img" alt=""></a>
-                            <span class="store-item-icon">
+                            <span class="store-item-icon bg-danger">
                                 <a href="/ShopingCart/AddToCart/@item.Id"><i class="fas fa-shopping-cart" id="add-to-cart"></i></a>
 
                             </span>
@@ -76,10 +77,10 @@
                         </div>
                     }
             @*<div class="row text-center page_shop">
-                <div class="col-sm-12 page">
-                    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
-                </div>
-            </div>*@
+                    <div class="col-sm-12 page">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+                    </div>
+                </div>*@
 
         </div>
         <div class="text-center page_shop">

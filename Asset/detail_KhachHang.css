@@ -1,0 +1,140 @@
+﻿
+.container-flex {
+    display: flex;
+}
+
+.profileUserParent {
+    padding-bottom: 41px;
+    border-radius: 5px;
+}
+
+.profile-sumary {
+    width: 260px;
+    min-width: 260px;
+    min-height: 523px;
+    border-radius: 5px;
+}
+
+    .profile-sumary
+    .boxProfileSumary {
+        margin-bottom: 1.5rem;
+        box-shadow: 0 3px 6px 0 rgb(0 0 0 / 6%);
+        background-color: #fff;
+        padding: 10px 9px;
+        border-radius: 3px;
+    }
+
+    .profile-sumary .spliter {
+        padding: 0 9px;
+        margin-top: 9px;
+        margin-bottom: 9px;
+    }
+
+.container-flex .profile-content {
+    padding: 16px 16px 0;
+    flex: 1;
+}
+
+    .container-flex .profile-content .section-header .header-title {
+        font-size: 20px;
+        font-weight: 400;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.1;
+        letter-spacing: normal;
+        text-align: left;
+        color: #666;
+    }
+
+    .container-flex .profile-content hr {
+        margin-top: .5rem;
+        margin-bottom: 1rem;
+    }
+
+    .container-flex .profile-content .section-content {
+        display: flex;
+    }
+
+        .container-flex .profile-content .section-content .content-container .content-title {
+            font-size: 20px;
+            font-weight: 400;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.1;
+            letter-spacing: normal;
+            text-align: left;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+.d-md-block {
+    min-width: 768px;
+    display: block !important;
+}
+
+.profileUserContent .row .p {
+    font-size: 14px;
+    color: #666;
+}
+
+.bgWhite {
+    background-color: #fff;
+}
+
+.form-control {
+    display: block;
+    width: 250%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.input-label {
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+.content1 {
+    transform: translate(160px, -42px);
+    width: 72%;
+    margin-top: 10px;
+    padding: 2px 8px;
+    border-radius: 8px;
+    border: 1px solid #c0bcbc;
+}
+
+    .content1:focus {
+        outline: #93e3f3 !important;
+        border: 1px solid #93e3f3;
+    }
+
+.btn2 {
+    background-color: #0d234a;
+    color: #fff;
+}
+
+.modal-content {
+    width: 140% !important;
+}
+
+.form-control_popup {
+    width: 98%;
+}
+
+.modal_password {
+    width: 75% !important;
+}
+
+.modal-dialog_pass {
+    transform: translate(11px, 151px) !important;
+}
+
+.conten_password {
+    transform: translate(113px, -43px);
+    width: 62%;
+}
+
+
+
+.table_chitiet {
+    transform: translateY(38px) !important;
+}

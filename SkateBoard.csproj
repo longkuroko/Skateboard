@@ -353,6 +353,14 @@
     <Compile Include="ViewModel\ShopingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404Page\index.html" />
+    <Content Include="Asset\404.css" />
+    <Content Include="Asset\thanhtoan.css" />
+    <Content Include="Asset\CheckOut.css" />
+    <Content Include="Asset\Contact.css" />
+    <Content Include="Asset\ShowtoCart.css" />
+    <Content Include="Asset\detail_KhachHang.css" />
+    <Content Include="Asset\lichsugiaohang.css" />
     <Content Include="Asset\Detail_product.css" />
     <Content Include="Asset\Sign_up.css" />
     <Content Include="Asset\login_admin.css" />
@@ -371,6 +379,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Contact_page\Contact.html" />
     <Content Include="img\1193926.jpg" />
     <Content Include="img\123.jpg" />
     <Content Include="img\308501-middle.png" />
@@ -507,6 +516,7 @@
     <Content Include="Views\OrderDetails\Edit.cshtml" />
     <Content Include="Views\OrderDetails\Index.cshtml" />
     <Content Include="Views\Customer\_CustomerModelPartial.cshtml" />
+    <Content Include="Views\Page_contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

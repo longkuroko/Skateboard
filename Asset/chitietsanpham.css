@@ -10,7 +10,6 @@ body {
 }
 
 
-
 .margin_tb_60 {
     margin: 60px 0px;
 }
@@ -136,14 +135,7 @@ a.heart_icon:hover {
     color: #ffb031;
 }
 
-a.btn:link, a.btn:visited {
-    font-size: 24px;
-    color: #034873;
-    background-color: #ffb031;
-    border: 2px solid #ffb031;
-    border-radius: 15px;
-    padding: 10px 25px;
-}
+
 
 a.btn:hover {
     color: #ffb031;
@@ -288,7 +280,7 @@ a.copyright_link:hover {
 }
 
 .background {
-    transform: translateY(-14px);
+    transform: translateY(-25px);
 }
 
 .store {
@@ -486,14 +478,7 @@ a.heart_icon:hover {
     color: #ffb031;
 }
 
-a.btn:link, a.btn:visited {
-    font-size: 24px;
-    color: #034873;
-    background-color: #ffb031;
-    border: 2px solid #ffb031;
-    border-radius: 15px;
-    padding: 10px 25px;
-}
+
 
 a.btn:hover {
     color: #ffb031;
@@ -502,12 +487,9 @@ a.btn:hover {
 
 /*Customer Reviews*/
 
-a.size_btn:link, a.size_btn:visited {
-    color: black;
-    background-color: #f2f2f2;
-    border: 1px solid black;
-    margin-right: 25px;
-}
+
+
+
 
 a.size_btn:hover {
     border: 1px solid #ffb031;
@@ -638,7 +620,7 @@ a.copyright_link:hover {
 }
 
 .background {
-    transform: translateY(-14px);
+    transform: translateY(-25px);
 }
 
 .store {
@@ -684,7 +666,7 @@ a.copyright_link:hover {
 
 .navbar {
     top: 22% !important;
-    z-index:1000;
+    z-index: 1000;
 }
 
 .page_shop {
@@ -839,14 +821,7 @@ a.heart_icon:hover {
     color: #ffb031;
 }
 
-a.btn:link, a.btn:visited {
-    font-size: 24px;
-    color: #034873;
-    background-color: #ffb031;
-    border: 2px solid #ffb031;
-    border-radius: 15px;
-    padding: 10px 25px;
-}
+
 
 a.btn:hover {
     color: #ffb031;
@@ -991,7 +966,7 @@ a.copyright_link:hover {
 }
 
 .background {
-    transform: translateY(-14px);
+    transform: translateY(-25px);
 }
 
 .store {
@@ -1036,7 +1011,7 @@ a.copyright_link:hover {
 }
 
 .navbar {
-    top: 18% !important;
+    top: 20% !important;
 }
 
 .page_shop {
@@ -1051,4 +1026,51 @@ a.copyright_link:hover {
     position: relative;
     width: 55% !important;
     overflow: hidden;
+}
+
+
+/*Bảng màu buttton*/
+.a {
+    color: #E7484F
+}
+
+.b {
+    color: #F68B1D
+}
+
+.c {
+    color: #FCED00
+}
+
+.d {
+    color: #009E4F
+}
+
+.e {
+    color: #00AAC3
+}
+
+.f {
+    color: #732982
+}
+
+
+/*.rainbow-5:hover {
+   z
+}*/
+
+
+a.btn:link, a.btn:visited:hover {
+    background-image: linear-gradient( to right, #E7484F, #E7484F 16.65%, #F68B1D 16.65%, #F68B1D 33.3%, #FCED00 33.3%, #FCED00 49.95%, #009E4F 49.95%, #009E4F 66.6%, #00AAC3 66.6%, #00AAC3 83.25%, #732982 83.25%, #732982 100%, #E7484F 100% );
+    animation: slidebg 2s linear infinite;
+    border: 2px solid #ffb031;
+    border-radius: 15px;
+    padding: 10px 25px;
+    font-size: 24px;
+}
+
+@keyframes slidebg {
+    to {
+        background-position: 20vw;
+    }
 }

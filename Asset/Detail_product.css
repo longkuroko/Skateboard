@@ -136,14 +136,14 @@ a.heart_icon:hover {
     color: #ffb031;
 }
 
-a.btn:link, a.btn:visited {
+/*a.btn:link, a.btn:visited {
     font-size: 24px;
     color: #034873;
     background-color: #ffb031;
     border: 2px solid #ffb031;
     border-radius: 15px;
     padding: 10px 25px;
-}
+}*/
 
 a.btn:hover {
     color: #ffb031;
@@ -248,7 +248,7 @@ form input[type=email] {
     width: 300px;
 }
 
-button.btn_subs:link, button.btn_subs:visited {
+/*button.btn_subs:link, button.btn_subs:visited {
     height: 40px;
     background-color: #ffb031;
     color: #034873;
@@ -256,7 +256,7 @@ button.btn_subs:link, button.btn_subs:visited {
     border: 2px solid #ffb031;
     font-size: 14px;
     padding: 0px 30px;
-}
+}*/
 
 button.btn_subs:hover {
     background-color: white;
@@ -288,7 +288,7 @@ a.copyright_link:hover {
 }
 
 .background {
-    transform: translateY(-14px);
+    transform: translateY(-25px);
 }
 
 .store {

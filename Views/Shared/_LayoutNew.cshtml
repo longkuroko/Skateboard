@@ -16,7 +16,8 @@
     <link href="~/Asset/login1.css" />
     <link href="~/Asset/giohang.css" rel="stylesheet" type="text/css" />
     <link href="~/Asset/shop.css" rel="stylesheet" type="text/css" />
-    <link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />*@
+ 
     @*<link href="~/Asset/login1.css" rel="stylesheet" type="text/css" />*@
 
     @Styles.Render("~/Asset/css")
@@ -46,10 +47,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="/Product/Index">CỬA HÀNG<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/Home/Index">TRANG CHỦ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Discount/discount.html">KHUYẾN MÃI</a>
+                        <a class="nav-link" href="/Product/Index">CỬA HÀNG<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">BLOG</a>
@@ -58,43 +59,42 @@
                         <a class="nav-link" href="../Contact/contact.html">LIÊN HỆ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <div class="left">
-                    <div class="dropdown ">
-                        @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
-                        @if (userLogin != null)
-                        {
-                            <span class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                @userLogin.Username
-                            </span>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <li><a class="dropdown-item" href="/Customer/Details/@userLogin.Id">Thông tin chi tiết</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="/Orders/Index/@userLogin.Id">Lịch sử giao dịch</a>
-                                </li>
-                                <li><a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a></li>
-                                <li>
-                                    <a class="dropdown-item" href="/ShopingCart/ShowtoCart">Giỏ hàng</a>
-                                    <i class="fas fa-shopping-cart"></i>
-                                    @Html.Action("BagCart", "ShopingCart")
-                                </li>
-
-                            </ul>
-                        }
-                        else
-                        {
-
-
-                            <li class="btn btn-outline-success my-2 my-sm-0 timkiem1 timkiem">
-                                <a href="/Customer/Login">
-                                    <i class="far fa-user"></i>
-                                </a>
+                <ul class="dropdown ">
+                    @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
+                    @if (userLogin != null)
+                    {
+                        <span class="btn btn-secondary dropdown-toggle user_name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @userLogin.Username
+                        </span>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="/Customer/Details/@userLogin.Id">Thông tin chi tiết</a></li>
+                            <li>
+                                <a class="dropdown-item" href="/Orders/Index/@userLogin.Id">Lịch sử giao dịch</a>
                             </li>
-                        }
-                    </div>
-            </div>
+                            <li><a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a></li>
+                        </ul>
+                        <span>
+                            <a href="/ShopingCart/ShowtoCart">
+                           
+                                <i class="fas fa-shopping-cart giohang"></i>
+                                @Html.Action("BagCart", "ShopingCart")
+                            </a>
+                        </span>
+                    }
+
+                    else
+                    {
+                        <li class="">
+                            <a href="/Customer/Login">
+                                <i class="far fa-user"></i>
+                            </a>
+                        </li>
+                    }
+                </ul>
+        
         </nav>
     </header>
     <div class="store">

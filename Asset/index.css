@@ -7,9 +7,7 @@
 
 body {
     overflow-x: hidden;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+ 
 }
 
 
@@ -26,12 +24,16 @@ body {
     position: absolute;
     margin: 0px auto !important;
     background-color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index:1000;
 }
 
-#navbar-nav {
-    margin: 0px auto !important;
-    top: 22%;
-    font-size:24px;
+.navbar-collapse {
+    margin-left: 300px !import@ant;
+    margin: 0px auto;
+    justify-content: flex-end;
 }
 
 .navbar-nav li {
@@ -156,8 +158,60 @@ a:hover {
   max-width: 100%;
 }
 
+.navbar-nav {
+    margin-right: 0px auto !important;
+}
+
+.user_name {
+    margin-right: 30px;
+}
+
+.badge {
+    color: #fffffe;
+    transform: translate(-20px,-19px);
+    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    border-radius: 300%;
+    border: 1px solid;
+    background-color: #ffd400;
+    padding-bottom: 5px;
+}
+
+.giohang {
+    color: #fff !important;
+    font-size: 22px;
+}
+
+.dropdown >li:nth-child(0) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-8px, 10px);
+}
+
+.fa-user {
+    transform: translate(-11px, 1px);
+    width: 30px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 300%;
+    padding: 6px;
+}
+
+#navbar-nav {
+    margin: 0px auto !important;
+}
+
+.dropdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(10px, 10px);
+}
+
 .navbar-nav .nav-item .nav-link:hover {
-  color: red;
+    color: red;
 }
 
 .product-info h3 a:hover {
@@ -294,9 +348,7 @@ h3 {
     transform: translate(12px, 18px);
 }
 
-.dropdown {
-    transform: translate(-37px, -21px);
-}
+
 
 .navbar {
     background-color: #000 !important;
@@ -376,4 +428,7 @@ li.active a{
 }
 .pagination > li :hover {
     color: red;
+}
+.navbar-collapse{
+    margin-left:300px;
 }

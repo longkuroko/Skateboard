@@ -354,6 +354,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="404Page\index.html" />
+    <Content Include="Asset\Admin_layout1.css" />
+    <Content Include="Asset\Admin_layout.css" />
     <Content Include="Asset\404.css" />
     <Content Include="Asset\thanhtoan.css" />
     <Content Include="Asset\CheckOut.css" />

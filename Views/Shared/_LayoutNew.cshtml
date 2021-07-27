@@ -12,11 +12,11 @@
     <link href="~/Asset/index.css" rel="stylesheet" type="text/css" />
 
     <link rel="stylesheet" href="~/Asset/chitietsanpham.css">
-    <link rel="stylesheet" href="~/Asset/giohang.css" />
+    <link rel="stylesheet" href="~/Asset/giohang.css" />z
     <link href="~/Asset/login1.css" />
     <link href="~/Asset/giohang.css" rel="stylesheet" type="text/css" />
     <link href="~/Asset/shop.css" rel="stylesheet" type="text/css" />
-    @*<link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />*@
+    <link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />
  
     @*<link href="~/Asset/login1.css" rel="stylesheet" type="text/css" />*@
 
@@ -53,20 +53,20 @@
                         <a class="nav-link" href="/Product/Index">CỬA HÀNG<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">BLOG</a>
+                        <a class="nav-link" href="https://www.basementskate.com.au/blog/">BLOG</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../Contact/contact.html">LIÊN HỆ</a>
+                        <a class="nav-link" href="~/Contact_page/Contact.html">LIÊN HỆ</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <ul class="dropdown ">
+                <ul class="dropdown" @*style="top: -17px; left: 80px;"*@>
                     @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
                     @if (userLogin != null)
                     {
-                        <span class="btn btn-secondary dropdown-toggle user_name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="btn btn-secondary button pulsedropdown-toggle user_name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @userLogin.Username
                         </span>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -78,7 +78,7 @@
                         </ul>
                         <span>
                             <a href="/ShopingCart/ShowtoCart">
-                           
+
                                 <i class="fas fa-shopping-cart giohang"></i>
                                 @Html.Action("BagCart", "ShopingCart")
                             </a>
@@ -94,7 +94,7 @@
                         </li>
                     }
                 </ul>
-        
+
         </nav>
     </header>
     <div class="store">
@@ -170,7 +170,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 
-
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v11.0" nonce="glZzIRPC"></script>
 </body>
 
 </html>

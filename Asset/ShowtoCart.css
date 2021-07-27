@@ -1,0 +1,34 @@
+﻿.card_title {
+    height: 280px ;
+}
+
+.btn-danger {
+    margin-top: 14px;
+    padding: 11px;
+}
+
+    .btn-danger a {
+        color: #fff;
+      
+    }
+
+.giohang_card {
+    transform: translateY(70px);
+}
+
+.site-footer {
+    margin-top: 90px;
+}
+
+.vat {
+    color: #000;
+    text-align: end;
+}
+
+.prices__value {
+    font-weight: 600;
+}
+
+td img {
+    max-width: 100%;
+}

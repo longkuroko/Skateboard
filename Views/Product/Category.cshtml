@@ -4,7 +4,7 @@
     @foreach (var item in Model)
     {
 
-        <a href="@Url.Action("ProductByCategory","Product", new { id = item.Id})" class="btn btn-outline-secondary btn-black text-uppercase filter-btn m-2"
+        <a href="@Url.Action("ProductByCategory","Product", new { id = item.Id})" class="btn btn-outline-secondary btn-black  filter-btn m-2"
            data-filter="all">@item.Name</a>
 
 

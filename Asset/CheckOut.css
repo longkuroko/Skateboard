@@ -1,0 +1,17 @@
+﻿.order-md-1 {
+    background-color: #fff;
+    padding: 17px;
+    border-radius: 20px;
+}
+
+
+.badge-pill {
+    transform: translateY(4px);
+}
+
+.site-footer{
+    margin-top:70px;
+}
+form input[type=email] {
+    width: 726px;
+}

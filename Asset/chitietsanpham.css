@@ -665,7 +665,7 @@ a.copyright_link:hover {
 }
 
 .navbar {
-    top: 22% !important;
+   
     z-index: 1000;
 }
 
@@ -1010,10 +1010,10 @@ a.copyright_link:hover {
     margin: 0px auto !important;
 }
 
-.navbar {
-    top: 20% !important;
+/*.navbar {
+    top: 22% !important;
 }
-
+*/
 .page_shop {
     margin: 10px auto !important;
 }

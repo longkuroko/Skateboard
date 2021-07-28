@@ -10,7 +10,9 @@ body {
 }
 
 
-
+.navbar {
+    top: 22% !important;
+}
 .margin_tb_60 {
     margin: 60px 0px;
 }

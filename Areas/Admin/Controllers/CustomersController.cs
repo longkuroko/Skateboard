@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using SkateBoard.Models;
 
 namespace SkateBoard.Areas.Admin.Controllers
@@ -15,9 +16,11 @@ namespace SkateBoard.Areas.Admin.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Admin/Customers
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Customers.ToList());
+
+            return View(db.Customers.ToList().OrderByDescending(x=>x.Id).ToPagedList(page ?? 1, 12));
+
         }
 
         // GET: Admin/Customers/Details/5

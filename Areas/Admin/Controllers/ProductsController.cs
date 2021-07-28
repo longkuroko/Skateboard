@@ -94,9 +94,9 @@ namespace SkateBoard.Areas.Admin.Controllers
             if(fileupload != null)
             {
                 string filename = Path.GetFileName(fileupload.FileName);
-                string path = Server.MapPath("~/UploadFile/" + filename);
+                string path = Server.MapPath("~/img/" + filename);
                 fileupload.SaveAs(path);
-                product.Image = "UploadFile/" + filename;
+                product.Image = "img/" + filename;
 
             }  
             if (ModelState.IsValid)

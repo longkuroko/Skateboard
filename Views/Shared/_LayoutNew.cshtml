@@ -16,7 +16,11 @@
     <link href="~/Asset/login1.css" />
     <link href="~/Asset/giohang.css" rel="stylesheet" type="text/css" />
     <link href="~/Asset/shop.css" rel="stylesheet" type="text/css" />
+
+    @*<link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />*@
+
     <link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />
+
  
     @*<link href="~/Asset/login1.css" rel="stylesheet" type="text/css" />*@
 
@@ -62,7 +66,8 @@
                         <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
                 </ul>
-                <ul class="dropdown" @*style="top: -17px; left: 80px;"*@>
+
+               
                     @{ var userLogin = Session["Customer"] as SkateBoard.Models.Customer;}
                     @if (userLogin != null)
                     {
@@ -94,7 +99,6 @@
                         </li>
                     }
                 </ul>
-
         </nav>
     </header>
     <div class="store">

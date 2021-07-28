@@ -15,22 +15,7 @@ namespace SkateBoard.Models
         [Display(Name ="Ngày đặt hàng")]
         public DateTime OrderDay { get; set; }
 
-        //[Required]
-        //[StringLength(255)]
-        //public string Name { get; set; }
-
-        //[Required]
-        //[StringLength(255)]
-        //public string Address { get; set; }
-
-        //[Required]
-        //[StringLength(10)]
-        //public string PhoneNumber { get; set; }
-
-        //[StringLength(255)]
-        //[Required]
-        //public string Email { get; set; }
-        
+       
 
         [Display(Name ="Tổng đơn hàng")]
         public decimal OrderTotal { get; set; }

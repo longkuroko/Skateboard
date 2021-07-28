@@ -20,6 +20,9 @@
     border-bottom: 1px solid rgb(244, 244, 244);
 }
 
+.navbar {
+    top: 22% !important;
+}
 .cart__submit {
 
     padding: 13px 10px;

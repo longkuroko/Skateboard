@@ -1,7 +1,11 @@
 ﻿
 
 /* nav links */
-.navbar-toggler {
+
+
+
+
+-toggler {
     outline: none !important;
 }
 
@@ -10,6 +14,9 @@
     color: var(--mainPink);
 }
 
+.navbar {
+    top: 22% !important;
+}
 .nav-link {
     color: var(--mainPink);
     font-size: 1.5rem;

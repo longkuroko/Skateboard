@@ -6,6 +6,12 @@
 }
 
 <link href="~/Asset/detail_KhachHang.css" rel="stylesheet" type="text/css" />
+<style>
+
+    .navbar {
+        top: 22% !important;
+    }
+</style>
 <div id="scroll" class="container container-flex mb-lg-5 profileUserParent profileUserHome">
     <div class="profileSumary position-relative profile-sumary d-lg-block table_chitiet">
         <div class="boxProfileSumary">
@@ -30,7 +36,8 @@
             </div>
             <hr class="d-none d-lg-block">
             <div class="section-content">
-                <div class="content-container method-container">
+                <div class="content-container method-container" style="margin-top: -8px";
+}>
                     <div class="content-title">Thông tin tài khoản</div>
                     <div class="bgWhite profileUserContent">
                         @using (Html.BeginForm())

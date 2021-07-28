@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="~/Asset/index.css" rel="stylesheet" type="text/css" />
+    
 
     <link rel="stylesheet" href="~/Asset/chitietsanpham.css">
     <link rel="stylesheet" href="~/Asset/giohang.css" />z
@@ -21,14 +21,21 @@
 
     <link href="~/Asset/chitietsanpham.css" rel="stylesheet" type="text/css" />
 
- 
+    <link href="~/Asset/index.css" rel="stylesheet" type="text/css" />
     @*<link href="~/Asset/login1.css" rel="stylesheet" type="text/css" />*@
 
     @Styles.Render("~/Asset/css")
 
 </head>
 
+
+
 <body>
+    <style>
+        li {
+            list-style: none;
+        }
+    </style>
     <header>
         <div class="logo">
             <div class="header">
@@ -43,7 +50,7 @@
                 </a>
             </div>
         </div>
-        <nav class="navbar navbar-expand-lg navbar-light text-white">
+        <nav class="navbar navbar-expand-lg navbar-light text-white" style=" top: 18%;">
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -74,7 +81,7 @@
                         <span class="btn btn-secondary button pulsedropdown-toggle user_name" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             @userLogin.Username
                         </span>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul class="dropdown-menu" style=" left: 87%; " aria-labelledby="dropdownMenuButton">
                             <li><a class="dropdown-item" href="/Customer/Details/@userLogin.Id">Thông tin chi tiết</a></li>
                             <li>
                                 <a class="dropdown-item" href="/Orders/Index/@userLogin.Id">Lịch sử giao dịch</a>
@@ -93,7 +100,7 @@
                             }
                             else
                             {
-                                <a href="#">
+                                <a href="~/404Page/index.html">
 
                                     <i class="fas fa-shopping-cart giohang"></i>
                                     @Html.Action("BagCart", "ShopingCart")
@@ -151,7 +158,7 @@
                                             <a href="#">Blog</a>
                                         </li>
                                         <li>
-                                            <a href="#">Điều khoảng</a>
+                                            <a href="~/404Page/index.html">Điều khoảng</a>
                                         </li>
                                     </ul>
                                 </div>

@@ -49,7 +49,10 @@
                 <h3 class="text-dark margin_top_30"><strong>@Html.DisplayFor(model => model.Product.Price)</strong></h3>
                 <hr class="mt-4">
                 <p class="blue_text mt-4"><strong>@Html.DisplayFor(model => model.Product.Category.Name)</strong></p>
-
+                @*@if (Model.Product.SLton <= 0)
+                {
+                    <p class="blue_text mt-4" style="color:red"><strong>Mặt Hàng này hiện hết</strong></p>
+                }*@
                 <p class="mt-4">
                     <strong><span class="blue_text">THÔNG TIN SẢN PHẨM</span></strong>
                     <br>@Html.DisplayFor(model => model.Product.Details)

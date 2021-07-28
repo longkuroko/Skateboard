@@ -22,8 +22,6 @@
         <h2 style="color:blue" class="mb-15">Danh Sách Khách hàng</h2>
         <p style=" 114px); font-size: 20px; ">
 
-            <i class="fas fa-plus" style="color:blue"></i>
-            @Html.ActionLink("Tạo mới khách hàng", "Create")
         </p>
         <tr>
             <th>
@@ -69,9 +67,9 @@
                     @Html.DisplayFor(modelItem => item.Phone)
                 </td>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+                    @*@Html.ActionLink("Delete", "Delete", new { id = item.Id })*@
                 </td>
             </tr>
         }

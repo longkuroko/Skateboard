@@ -22,7 +22,9 @@ namespace SkateBoard.Models
         public Category Category { get; set; }
         [Required]
         public int CategoryId { get; set; }      
-     
+        
+        [Display(Name="SL Tồn")]
+        public int SLton { get; set; }
         public Product()
         {
 

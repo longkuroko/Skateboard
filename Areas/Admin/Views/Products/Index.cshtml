@@ -22,21 +22,25 @@
                 @Html.Label("Danh mục")
             </th>
             <th>
-                
+
                 @Html.Label("Tên SP")
             </th>
             <th>
-                
+
                 @Html.Label("Gía tiền")
             </th>
             <th>
-                
+
                 @Html.Label("Hình ảnh")
             </th>
             <th>
-                
+
                 @Html.Label("Mô tả")
             </th>
+            @*<th>
+
+                @Html.Label("SL Tồn")
+            </th>*@
             <th></th>
         </tr>
         @foreach (var item in Model)
@@ -59,6 +63,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Details)
                 </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.SLton)
+                </td>*@
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |

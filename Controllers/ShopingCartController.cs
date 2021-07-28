@@ -125,6 +125,7 @@ namespace SkateBoard.Controllers
                 order.OrderDay = DateTime.Now;
                 order.OrderTotal = Convert.ToDecimal(tongtien);
                 _dbContext.Orders.Add(order);
+
                 foreach (var item in cart.CartItems)
                 {
                     OrderDetail orderDetail = new OrderDetail();
@@ -133,7 +134,23 @@ namespace SkateBoard.Controllers
                     orderDetail.Price = item.Product.Price;
                     orderDetail.Qty = item.qty;
                     _dbContext.OrderDetails.Add(orderDetail);
+                    ViewBag.ThongBao = "Đặt hàng thành công";
+
+                    //Product pro = _dbContext.Products.Where(x => x.Id == orderDetail.ProductId).FirstOrDefault();
+                    //if(pro != null)
+                    //{
+                    //    pro.SLton -= orderDetail.Qty;
+                    //}
+
+                    //if(pro.SLton <= 0)
+                    //{
+                    //    ViewBag.Error = "Đã hết hàng";
+                    //}
+
                 }
+                
+
+               
                 _dbContext.SaveChanges();
                 cart.ClearCart();
                 return RedirectToAction("OrderSuccess", "ShopingCart");

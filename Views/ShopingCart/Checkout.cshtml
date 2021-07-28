@@ -14,84 +14,90 @@
         </div>
 
         @{ var cartSession = Session["Cart"] as SkateBoard.Models.Cart; }
-        <div class="row">
-        @if (cartSession != null)
-        {
+   <div class="row">
+       @if (cartSession != null)
+       {
 
-            <div class="col-md-4 order-md-2 mb-4">
-                <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
-                    <span class="badge badge-secondary badge-pill">@cartSession.TotalQuantity()</span>
-                </h4>
-             
-                <ul class="list-group mb-3">
-                    @foreach (var item in cartSession.CartItems)
-                    {
-                        <li class="list-group-item d-flex justify-content-between lh-condensed">
-                            <div>
-                                <h6 class="my-0">@item.Product.Name</h6>
-                                <small class="text-muted">@item.qty</small>
-                            </div>
-                            <span class="text-muted">@item.Product.Price</span>
-                        </li>
-                    }
-                    <li class="list-group-item d-flex justify-content-between">
-                        <span>Tổng Tiền(VNĐ)</span>
-                        <strong>@cartSession.TotalMoney()</strong>
-                    </li>
-                </ul>
-            </div>
-        }
-        @{ var customer = Session["Customer"] as SkateBoard.Models.Customer;}
+           if (ViewBag.Error != null)
+           {
+               <p class="blue_text mt-4" style="color:red"><strong>Không thể đặt hàng vì mặt hàng này tạm hết</strong></p>
+           }
 
 
-        <div class="col-md-8 order-md-1">
-            @if (customer != null)
-            {
-                <h4 class="mb-3">Billing address</h4>
-                <form class="needs-validation" novalidate>
-                    
-                        <div class=" mb-3">
-                            <label for="firstName">FullName</label>
-                            <input type="text" class="form-control" id="firstName" placeholder="" value="@customer.fullname" required>
-                            <div class="invalid-feedback">
-                                Valid first name is required.
-                            </div>
-                        </div>
-                   
-                    <div class="mb-3">
-                        <label for="username">Username</label>
-                        <div class="input-group">
-                       
-                            <input type="text" class="form-control" id="username" placeholder="Username" value="@customer.Username" required>
-                            <div class="invalid-feedback" style="width: 100%;">
-                                Your username is required.
-                            </div>
-                        </div>
-                    </div>
+           <div class="col-md-4 order-md-2 mb-4">
+               <h4 class="d-flex justify-content-between align-items-center mb-3">
+                   <span class="text-muted">Your cart</span>
+                   <span class="badge badge-secondary badge-pill">@cartSession.TotalQuantity()</span>
+               </h4>
 
-                    <div class="mb-3">
-                        <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" class="form-control" id="email" placeholder="you@example.com" value="@customer.Email">
-                        <div class="invalid-feedback">
-                            Please enter a valid email address for shipping updates.
-                        </div>
-                    </div>
+               <ul class="list-group mb-3">
+                   @foreach (var item in cartSession.CartItems)
+                   {
+                       <li class="list-group-item d-flex justify-content-between lh-condensed">
+                           <div>
+                               <h6 class="my-0">@item.Product.Name</h6>
+                               <small class="text-muted">@item.qty</small>
+                           </div>
+                           <span class="text-muted">@item.Product.Price</span>
+                       </li>
+                   }
+                   <li class="list-group-item d-flex justify-content-between">
+                       <span>Tổng Tiền(VNĐ)</span>
+                       <strong>@cartSession.TotalMoney()</strong>
+                   </li>
+               </ul>
+           </div>
+       }
+       @{ var customer = Session["Customer"] as SkateBoard.Models.Customer;}
 
-                    <div class="mb-3">
-                        <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required value="@customer.Address">
-                        <div class="invalid-feedback">
-                            Please enter your shipping address.
-                        </div>
-                    </div>
-                    <hr class="mb-4">
-           
-                    <button class="btn btn-danger btn-lg btn-block" type="submit">Thanh Toán</button>
-                </form>
-            }
-            </div>
-        </div>
+
+       <div class="col-md-8 order-md-1">
+           @if (customer != null)
+           {
+               <h4 class="mb-3">Billing address</h4>
+               <form class="needs-validation" novalidate>
+
+                   <div class=" mb-3">
+                       <label for="firstName">FullName</label>
+                       <input type="text" class="form-control" id="firstName" placeholder="" value="@customer.fullname" required>
+                       <div class="invalid-feedback">
+                           Valid first name is required.
+                       </div>
+                   </div>
+
+                   <div class="mb-3">
+                       <label for="username">Username</label>
+                       <div class="input-group">
+
+                           <input type="text" class="form-control" id="username" placeholder="Username" value="@customer.Username" required>
+                           <div class="invalid-feedback" style="width: 100%;">
+                               Your username is required.
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class="mb-3">
+                       <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                       <input type="email" class="form-control" id="email" placeholder="you@example.com" value="@customer.Email">
+                       <div class="invalid-feedback">
+                           Please enter a valid email address for shipping updates.
+                       </div>
+                   </div>
+
+                   <div class="mb-3">
+                       <label for="address">Address</label>
+                       <input type="text" class="form-control" id="address" placeholder="1234 Main St" required value="@customer.Address">
+                       <div class="invalid-feedback">
+                           Please enter your shipping address.
+                       </div>
+                   </div>
+                   <hr class="mb-4">
+
+                   <button class="btn btn-danger btn-lg btn-block" type="submit">Thanh Toán</button>
+               </form>
+           }
+       </div>
+   </div>
 </div>
 
 }

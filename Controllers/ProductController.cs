@@ -18,14 +18,14 @@ namespace SkateBoard.Controllers
         // GET: Product
         public ActionResult Index(string Search, int? page)
         {
-            var products = db.Products.Include(p => p.Category).ToList();
+            var products = db.Products.Include(p => p.Category).OrderByDescending(x=>x.Id).ToList();
             if (!String.IsNullOrEmpty(Search))
             {
                 ViewBag.Search = Search;
                 products = products.Where(p => p.Name.ToLower().Contains(Search.ToLower())).ToList();
             }
 
-            return View(products.ToPagedList(page ?? 1, 9));
+            return View(products.ToPagedList(page ?? 1, 6));
         }
 
         // GET: Product/Details/5
@@ -68,8 +68,8 @@ namespace SkateBoard.Controllers
         }
         public ActionResult ProductByCategory(int id, int? page)
         {
-            var products = db.Products.Where(s => s.CategoryId == id).ToList();
-            return View(products.ToPagedList(page ?? 1,9));
+            var products = db.Products.Where(s => s.CategoryId == id).OrderByDescending(x=>x.Id).ToList();
+            return View(products.ToPagedList(page ?? 1,6));
         }
        
 

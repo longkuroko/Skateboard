@@ -1,4 +1,6 @@
-﻿@model IEnumerable<SkateBoard.Models.Customer>
+﻿@using SkateBoard.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<Customer>
 
 @{
     ViewBag.Title = "Index";
@@ -8,8 +10,8 @@
 
 
 <style>
-    hr{
-        display:none;
+    hr {
+        display: none;
     }
 </style>
 
@@ -25,22 +27,22 @@
         </p>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Username)
+                @Html.Label("Tên đăng nhập")
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Password)
+            </th>*@
+            <th>
+                @Html.Label("Full name")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fullname)
+                @Html.Label("Địa chỉ")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.Label("Email")
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Phone)
+                @Html.Label("Điện thoại")
             </th>
             <th></th>
         </tr>
@@ -51,9 +53,9 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Username)
                 </td>
-                <td>
+                @*<td>
                     @Html.DisplayFor(modelItem => item.Password)
-                </td>
+                </td>*@
                 <td>
                     @Html.DisplayFor(modelItem => item.fullname)
                 </td>
@@ -75,4 +77,10 @@
         }
 
     </table>
+    <div class="text-center page_shop">
+        <div class="page">
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }))
+        </div>
+    </div>
+
 </div>

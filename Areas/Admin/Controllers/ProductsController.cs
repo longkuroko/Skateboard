@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using SkateBoard.Models;
 
 namespace SkateBoard.Areas.Admin.Controllers
@@ -16,13 +17,30 @@ namespace SkateBoard.Areas.Admin.Controllers
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-       
+
 
         // GET: Admin/Products
-        public ActionResult Index()
+        //public ActionResult Index(string Search, int? page)
+        //{
+        //    var products = db.Products.Include(p => p.Category).OrderByDescending(x=>x.Id);
+        //    if (!String.IsNullOrEmpty(Search))
+        //    {
+        //        ViewBag.Search = Search;
+        //        products = products.Where(p => p.Name.ToLower().Contains(Search.ToLower())).ToList();
+        //    }
+
+        //    return View(products.ToPagedList(page ?? 1, 6));
+        //}
+        public ActionResult Index(string Search, int? page)
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            var products = db.Products.Include(p => p.Category).OrderByDescending(x => x.Id).ToList();
+            if (!String.IsNullOrEmpty(Search))
+            {
+                ViewBag.Search = Search;
+                products = products.Where(p => p.Name.ToLower().Contains(Search.ToLower()) || p.Category.Name.ToLower().Contains(Search.ToLower())).ToList();
+            }
+
+            return View(products.ToPagedList(page ?? 1, 6));
         }
 
         // GET: Admin/Products/Details/5

@@ -13,7 +13,7 @@ namespace SkateBoard.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202107241801573_InitialModel"; }
+            get { return "202107281455470_InitialModel"; }
         }
         
         string IMigrationMetadata.Source

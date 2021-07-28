@@ -21,9 +21,18 @@ namespace SkateBoard.Controllers
                 .Where(p => p.CustomerId == id);
             return View(orders.ToList());
         }
+
+        //chi tiết đơn hàng
+        //public ActionResult ChiTietDonHang()
+        //{
+
+        //}
+
+
+
         public ActionResult Details(int id)
         {
-            var orderDetails = db.OrderDetails.Include(o => o.Order).Include(o => o.Product).Where(p=>p.OrderId == id);
+            var orderDetails = db.OrderDetails.Include(o => o.Order).Include(o => o.Product).Where(p=>p.OrderId == id).OrderByDescending(x=>x.Order.OrderDay);
             return View(orderDetails.ToList());
         }
     }

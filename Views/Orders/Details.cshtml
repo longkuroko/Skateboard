@@ -1,5 +1,4 @@
-﻿@*@model SkateBoard.Models.OrderDetail
-
+﻿@model IEnumerable<SkateBoard.Models.OrderDetail>
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_LayoutNew.cshtml";
@@ -10,7 +9,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Order.Id)
+            @Html.Label("Mã đơn hàng")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Product.Name)
@@ -42,4 +41,4 @@
         </tr>
     }
 
-</table>*@
+</table>

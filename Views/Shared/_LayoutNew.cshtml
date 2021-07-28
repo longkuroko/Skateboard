@@ -82,11 +82,24 @@
                             <li><a class="dropdown-item" href="/Customer/LogOut">Đăng xuất</a></li>
                         </ul>
                         <span>
-                            <a href="/ShopingCart/ShowtoCart">
+                            @{ var Sessioncart = Session["Cart"] as SkateBoard.Models.Cart;}
+                            @if (Sessioncart != null)
+                            {
+                                <a href="/ShopingCart/ShowtoCart">
 
-                                <i class="fas fa-shopping-cart giohang"></i>
-                                @Html.Action("BagCart", "ShopingCart")
-                            </a>
+                                    <i class="fas fa-shopping-cart giohang"></i>
+                                    @Html.Action("BagCart", "ShopingCart")
+                                </a>
+                            }
+                            else
+                            {
+                                <a href="#">
+
+                                    <i class="fas fa-shopping-cart giohang"></i>
+                                    @Html.Action("BagCart", "ShopingCart")
+                                </a>
+                            }
+
                         </span>
                     }
 

@@ -12,7 +12,7 @@ using SkateBoard.Models;
 
 namespace SkateBoard.Controllers
 {
-    [Authorize]
+ 
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

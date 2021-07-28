@@ -31,18 +31,20 @@ namespace SkateBoard.Controllers
         {
             var login = db.Customers.Where(s => s.Username == customer.Username && s.Password == customer.Password).FirstOrDefault();
 
-            if(login == null)
+            if(login != null)
             {
-               ModelState.AddModelError("","Tên đăng nhập hoặc mật khẩu không đúng");
-               return View("Login", "Customer");
-
+                Session["Customer"] = login;
+                ViewBag.ThongBao = null;
+                return RedirectToAction("Index", "Home");
+                
+               
             }
             else
             {
-                Session["Customer"] = login;
-                ViewBag.Thongbao = "Đăng nhập thành công";
-                return RedirectToAction("Index", "Home");
+                ViewBag.ThongBao = "Tên đăng nhập hoặc mật khẩu không đúng";
             }
+
+            return View();
         }
 
         //ho so
@@ -71,8 +73,8 @@ namespace SkateBoard.Controllers
         [HttpPost]
         public ActionResult Register(Customer customer)
         {
-            if (ModelState.IsValid)
-            {
+            //if (ModelState.IsValid)
+            //{
                 var check = db.Customers.FirstOrDefault(s => s.Username == customer.Username);
                 if(check == null)
                 {
@@ -91,14 +93,13 @@ namespace SkateBoard.Controllers
                     ViewBag.ThongBao = "Đăng nhập thành công";
                     return RedirectToAction("Login", "Customer");
                 }
-            }
-            else
-            {
-                ViewBag.Error = "Tên đăng nhập đã tồn tại!";
-                return View();
-            }
-
-            return View();
+                else
+                {
+                    ViewBag.Error = "Tên đăng nhập đã tồn tại!";
+                    return View();
+                }
+            //}
+            
                          
         }
 
